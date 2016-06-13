@@ -1,0 +1,29 @@
+<h2>Authentication</h2>
+
+<%= form_for @conn, page_path(@conn, :login_twofa), [as: :user], fn f -> %>
+  <%= if f.errors != [] do %>
+    <div class="alert alert-error">
+      <p>Please check the errors below:</p>
+      <ul>
+        <%= for {attr, message} <- f.errors do %>
+          <li><%= humanize(attr) %> <%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <label>Verification code</label>
+    <%= text_input f, :totp, class: "form-control" %>
+  </div>
+
+  <%= hidden_input f, :storage, value: @storage %>
+  <%= hidden_input f, :uniq, value: @uniq %>
+  <%= hidden_input f, :id, value: @id %>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn" %>
+  </div>
+<% end %>
+
+<%= link "Back", to: page_path(@conn, :index) %>

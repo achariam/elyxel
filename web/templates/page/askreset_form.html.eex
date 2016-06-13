@@ -1,0 +1,25 @@
+<h2>Reset password</h2>
+
+<%= form_for @conn, page_path(@conn, :askreset), [as: :user], fn f -> %>
+  <%= if f.errors != [] do %>
+    <div class="alert alert-error">
+      <p>Please check the errors below:</p>
+      <ul>
+        <%= for {attr, message} <- f.errors do %>
+          <li><%= humanize(attr) %> <%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h4>Please enter your email address</h4>
+
+  <div class="form-group">
+    <label>Email</label>
+    <%= text_input f, :email, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn" %>
+  </div>
+<% end %>

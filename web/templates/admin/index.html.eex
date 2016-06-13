@@ -1,0 +1,28 @@
+<h2>Welcome, my lord and master!</h2>
+
+<h2>Listing users</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Role</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for user <- @users do %>
+    <tr>
+      <td><%= user.username %></td>
+      <td><%= user.role %></td>
+
+      <td class="text-right">
+        <%= link "Delete", to: admin_path(@conn, :delete, user), method: :delete, class: "btn btn-danger" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New user", to: admin_path(@conn, :new) %>

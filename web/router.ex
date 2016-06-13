@@ -7,6 +7,7 @@ defmodule Elyxel.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug Openmaize.Authenticate
   end
 
   pipeline :api do
@@ -17,10 +18,28 @@ defmodule Elyxel.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/confirm", PageController, :confirm
+    get "/askreset", PageController, :askreset
+    post "/askreset", PageController, :askreset_password
+    get "/reset", PageController, :reset
+    post "/reset", PageController, :reset_password
+    get "/login", PageController, :login, as: :login
+    post "/login", PageController, :login_user, as: :login
+    get "/twofa", PageController, :twofa
+    post "/twofa", PageController, :login_twofa
+    delete "/logout", PageController, :logout, as: :logout
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", Elyxel do
-  #   pipe_through :api
-  # end
+  scope "/users", Elyxel do
+    pipe_through :browser
+
+    resources "/", UserController, only: [:index, :show, :edit, :update]
+  end
+
+  scope "/admin", Elyxel do
+    pipe_through :browser
+
+    get "/", AdminController, :index
+    resources "/users", AdminController, only: [:new, :create, :delete]
+  end
 end

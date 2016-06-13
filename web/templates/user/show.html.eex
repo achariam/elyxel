@@ -1,0 +1,21 @@
+<h2>Show user</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @user.username %>
+  </li>
+
+  <li>
+    <strong>Biography:</strong>
+    <p><%= @user.bio %></p>
+  </li>
+
+</ul>
+
+<%= if @current_user[:id] == @user.id do %>
+<%= link "Edit", to: user_path(@conn, :edit, @user) %>
+<%= else %>
+<%= link "Back", to: user_path(@conn, :index) %>
+<%= end %>

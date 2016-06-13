@@ -1,0 +1,27 @@
+<div class="footer-col">
+  <ul>
+    <li>
+      <a href="http://hexdocs.pm/openmaize">Openmaize docs</a>
+    </li>
+    <li>
+      <a href="http://phoenixframework.org/docs/overview">Phoenix guides</a>
+    </li>
+    <li>
+      <a href="http://hexdocs.pm/phoenix">Phoenix docs</a>
+    </li>
+  </ul>
+</div>
+<div class="footer-col">
+  <ul>
+    <li>
+      <a href="http://elixir-lang.org">Elixir language</a>
+    </li>
+    <li>
+      <a href="http://groups.google.com/group/elixir-lang-talk">Elixir mailing list</a>
+    </li>
+    <li>
+      <a href="http://groups.google.com/group/phoenix-talk">Phoenix mailing list</a>
+    </li>
+  </ul>
+</div>
+

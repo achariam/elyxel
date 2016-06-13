@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>You have beautiful thighs!</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <nav>
+          <ul>
+            <li><a href="<%= page_path @conn, :index %>">Home</a></li>
+            <li><a href="<%= user_path @conn, :index %>">Users</a></li>
+            <li><a href="<%= admin_path @conn, :index %>">Admin</a></li>
+              <%= if @current_user do %>
+              <li><a href="<%= user_path(@conn, :show, @current_user[:id]) %>"><%= user_name @current_user %></a></li>
+              <li><%= link "Logout", to: logout_path(@conn, :logout), method: :delete %></li>
+              <%= else %>
+              <li><a href="<%= login_path @conn, :login %>">Login</a></li>
+              <%= end %>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="hero">
+        <div class="hero-inner">
+          <h1>Openmaize</h1>
+          <h2>Authentication library for Elixir</h2>
+        </div>
+      </div>
+
+      <div class="container">
+        <p class="alert alert-info"><%= get_flash(@conn, :info) %></p>
+        <p class="alert alert-error"><%= get_flash(@conn, :error) %></p>
+      </div>
+
+      <div class="section">
+        <%= render @view_module, @view_template, assigns %>
+      </div>
+      <div class="push"></div>
+    </div>
+    </div>
+    <div class="push"></div>
+    </div>
+
+    <footer>
+      <%= render Elyxel.LayoutView, "footer.html" %>
+    </footer>
+
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script>require("web/static/js/app")</script>
+  </body>
+</html>

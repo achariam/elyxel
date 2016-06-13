@@ -1,4 +1,4 @@
-defmodule Elyxel.LayoutView do
+defmodule Elyxel.UserView do
   use Elyxel.Web, :view
 
   def user_name(%{email: email}) do
