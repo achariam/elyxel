@@ -7,9 +7,9 @@ defmodule Elyxel.Mailer do
   """
 
   use Mailgun.Client, domain: Application.get_env(:elyxel, :mailgun_domain),
-                      key:    Application.get_env(:elyxel, :mailgun_key)
-#                      mode: :test, # these two lines are only for testing
-#                      test_file_path: "/tmp/mailgun.json"
+                      key:    Application.get_env(:elyxel, :mailgun_key),
+                      mode: :test, # these two lines are only for testing
+                      test_file_path: "tmp/mailgun.json"
 
   @from "norwegianblue@example.com"
 
