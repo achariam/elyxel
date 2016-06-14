@@ -29,7 +29,7 @@ defmodule Elyxel.User do
   """
   def changeset(model, params \\ :empty) do
     model
-    |> cast(params, ~w(email role), ~w(username bio))
+    |> cast(params, ~w(email role), ~w(username))
     |> validate_length(:username, min: 1, max: 100)
     |> unique_constraint(:email)
   end
