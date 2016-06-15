@@ -19,7 +19,7 @@ defmodule Elyxel.Mixfile do
   def application do
     [mod: {Elyxel, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :openmaize]]
+                    :phoenix_ecto, :postgrex, :openmaize, :openmaize_jwt]]
   end
 
   # Specifies which paths to compile per environment.
@@ -38,7 +38,10 @@ defmodule Elyxel.Mixfile do
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
      {:exrm, "~> 1.0.5"},
-     {:openmaize, "~> 0.18"}]
+     {:openmaize, "~> 0.18"},
+     {:mailgun, "~> 0.1.2"},
+     {:not_qwerty123, "~> 1.1"},
+     {:openmaize_jwt, "~> 0.9"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
