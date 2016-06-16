@@ -1,0 +1,63 @@
+<h2>Show user</h2>
+
+<ul>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </li>
+
+  <li>
+    <strong>Username:</strong>
+    <%= @user.username %>
+  </li>
+
+  <li>
+    <strong>First name:</strong>
+    <%= @user.first_name %>
+  </li>
+
+  <li>
+    <strong>Last name:</strong>
+    <%= @user.last_name %>
+  </li>
+
+  <li>
+    <strong>Password hash:</strong>
+    <%= @user.password_hash %>
+  </li>
+
+  <li>
+    <strong>Role:</strong>
+    <%= @user.role %>
+  </li>
+
+  <li>
+    <strong>Confirmed at:</strong>
+    <%= @user.confirmed_at %>
+  </li>
+
+  <li>
+    <strong>Confirmation token:</strong>
+    <%= @user.confirmation_token %>
+  </li>
+
+  <li>
+    <strong>Confirmation sent at:</strong>
+    <%= @user.confirmation_sent_at %>
+  </li>
+
+  <li>
+    <strong>Reset token:</strong>
+    <%= @user.reset_token %>
+  </li>
+
+  <li>
+    <strong>Reset sent at:</strong>
+    <%= @user.reset_sent_at %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: user_path(@conn, :edit, @user) %>
+<%= link "Back", to: user_path(@conn, :index) %>
