@@ -40,3 +40,9 @@ config :elyxel, Elyxel.Repo,
   database: "elyxel_dev",
   hostname: "localhost",
   pool_size: 10
+
+# Openmaize authentication lib config
+config :openmaize,
+  user_model: Elyxel.User,
+  repo: Elyxel.Repo,
+  password_strength: [min_length: 8, extra_chars: true, common: true]
