@@ -1,6 +1,8 @@
 defmodule Elyxel.User do
   use Elyxel.Web, :model
 
+  alias Openmaize.DB
+
   schema "users" do
     field :email, :string
     field :username, :string
@@ -28,8 +30,21 @@ defmodule Elyxel.User do
   """
   def changeset(model, params \\ :empty) do
     model
-    |> cast(params, @required_fields, @optional_fields)
+    |> cast(params, ~w(email role), ~w(username))
+    |> validate_length(:username, min: 1, max: 100)
     |> unique_constraint(:email)
-    |> unique_constraint(:username)
+  end
+
+  def auth_changeset(model, params, key) do
+    model
+    |> changeset(params)
+    |> DB.add_password_hash(params)
+    |> DB.add_confirm_token(key)
+  end
+
+  def reset_changeset(model, params, key) do
+    model
+    |> cast(params, ~w(email), [])
+    |> DB.add_reset_token(key)
   end
 end

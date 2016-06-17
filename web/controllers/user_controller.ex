@@ -1,11 +1,15 @@
 defmodule Elyxel.UserController do
   use Elyxel.Web, :controller
 
+  import Elyxel.Authorize
   alias Elyxel.User
 
   plug :scrub_params, "user" when action in [:create, :update]
+  plug :id_check when action in [:show, :edit, :update]
 
-  def index(conn, _params) do
+  def action(conn, _), do: authorize_action conn, ["admin", "user"], __MODULE__
+
+  def index(conn, _params, _user) do
     users = Repo.all(User)
     render(conn, "index.html", users: users)
   end
@@ -28,7 +32,8 @@ defmodule Elyxel.UserController do
     end
   end
 
-  def show(conn, %{"id" => id}) do
+  def show(conn, %{"id" => id}, _user) do
+    IO.inspect conn
     user = Repo.get!(User, id)
     render(conn, "show.html", user: user)
   end
