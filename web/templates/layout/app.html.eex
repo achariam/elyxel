@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>You have beautiful thighs!</title>
+    <title>Elyxel</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
@@ -27,13 +27,6 @@
               <%= end %>
           </ul>
         </nav>
-      </div>
-
-      <div class="hero">
-        <div class="hero-inner">
-          <h1>Openmaize</h1>
-          <h2>Authentication library for Elixir</h2>
-        </div>
       </div>
 
       <div class="container">
