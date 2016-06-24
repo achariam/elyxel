@@ -3,6 +3,7 @@ defmodule Elyxel.UserController do
 
   import Elyxel.Authorize
   alias Elyxel.User
+  alias Elyxel.Wire
 
   plug :scrub_params, "user" when action in [:create, :update]
   plug :id_check when action in [:show, :edit, :update]
@@ -28,8 +29,7 @@ defmodule Elyxel.UserController do
   end
 
   def show(conn, %{"id" => id}, _user) do
-    IO.inspect conn
-    user = Repo.get!(User, id)
+    user = User |> Repo.get!(id) |> Repo.preload([:wires])
     render(conn, "show.html", user: user)
   end
 

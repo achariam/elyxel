@@ -7,6 +7,15 @@
     <%= @user.username %>
   </li>
 
+  <%= for wire <- @user.wires do %>
+      <tr>
+        <td><%= wire.title %></td>
+        <td><%= wire.context %></td>
+        <td><%= wire.link %></td>
+        <td><%= wire.user_id %></td>
+      </tr>
+  <% end %>
+
 </ul>
 
 <%= if @current_user[:id] == @user.id do %>
