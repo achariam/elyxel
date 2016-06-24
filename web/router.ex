@@ -37,4 +37,10 @@ defmodule Elyxel.Router do
     resources "/users", AdminController, only: [:new, :create, :delete]
   end
 
+  scope "/top", Elyxel do
+    pipe_through :browser
+
+    get "/", WireController, :index
+  end
+
 end

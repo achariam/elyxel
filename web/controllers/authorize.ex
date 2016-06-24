@@ -3,7 +3,7 @@ defmodule Elyxel.Authorize do
   import Plug.Conn
   import Phoenix.Controller
 
-  @redirects %{"admin" => "/admin", "user" => "/users", nil => "/"}
+  @redirects %{"admin" => "/top", "user" => "/top", nil => "/"}
 
   @doc """
   Custom action that can be used to override the `action` function in any
