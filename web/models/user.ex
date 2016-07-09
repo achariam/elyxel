@@ -1,7 +1,7 @@
 defmodule Elyxel.User do
   use Elyxel.Web, :model
 
-  alias Openmaize.DB
+  alias Elyxel.OpenmaizeEcto
 
   schema "users" do
     field :email, :string

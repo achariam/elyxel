@@ -1,7 +1,7 @@
 defmodule Elyxel.AuthorizeTest do
   use Elyxel.ConnCase
 
-  import Openmaize.DB
+  import Elyxel.OpenmaizeEcto
   import OpenmaizeJWT.Create
   alias Elyxel.{Repo, User}
 

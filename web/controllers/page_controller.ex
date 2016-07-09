@@ -5,12 +5,12 @@ defmodule Elyxel.PageController do
   alias Openmaize.Login.Name
   alias Elyxel.{Mailer, User}
 
-  plug Openmaize.ConfirmEmail, [key_expires_after: 30,
+  plug Openmaize.ConfirmEmail, [db_module: Elyxel.OpenmaizeEcto, key_expires_after: 30,
     mail_function: &Mailer.receipt_confirm/1] when action in [:confirm]
-  plug Openmaize.ResetPassword, [key_expires_after: 30,
+  plug Openmaize.ResetPassword, [db_module: Elyxel.OpenmaizeEcto, key_expires_after: 30,
     mail_function: &Mailer.receipt_confirm/1] when action in [:reset_password]
 
-  plug Openmaize.Login, [unique_id: &Name.email_username/1] when action in [:login_user]
+  plug Openmaize.Login, [db_module: Elyxel.OpenmaizeEcto, unique_id: &Name.email_username/1, override_exp: 10_080] when action in [:login_user]
   plug Openmaize.Logout when action in [:logout]
 
   def index(conn, _params) do

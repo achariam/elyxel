@@ -1,6 +1,5 @@
 defmodule Elyxel.Confirm do
 
-  import Plug.Conn
   import Phoenix.Controller
   import Elyxel.Authorize
 
@@ -11,7 +10,8 @@ defmodule Elyxel.Confirm do
 
   Add the following line to the controller file:
 
-      plug Openmaize.ConfirmEmail, [mail_function: &Mailer.receipt_confirm/1] when action in [:confirm]
+      plug Openmaize.ConfirmEmail, [db_module: Welcome.OpenmaizeEcto,
+        mail_function: &Mailer.receipt_confirm/1] when action in [:confirm]
 
   and then call `handle_confirm` from the `confirm` function in the controller.
 
@@ -35,7 +35,8 @@ defmodule Elyxel.Confirm do
 
   Add the following line to the controller file:
 
-      plug Openmaize.ResetPassword, [mail_function: &Mailer.receipt_confirm/1] when action in [:reset_password]
+      plug Openmaize.ResetPassword, [db_module: Welcome.OpenmaizeEcto,
+        mail_function: &Mailer.receipt_confirm/1] when action in [:reset_password]
 
   and then call `handle_reset` from the `reset_password` function in the controller.
 

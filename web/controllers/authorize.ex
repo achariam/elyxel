@@ -102,7 +102,7 @@ defmodule Elyxel.Authorize do
 
   Add the following line to the controller which handles login:
 
-      plug Openmaize.Login when action in [:login_user]
+      plug Openmaize.Login, [db_module: Welcome.OpenmaizeEcto] when action in [:login_user]
 
   and then call `handle_login` from the `login_user` function:
 
