@@ -32,8 +32,10 @@ defmodule Elyxel.ChannelCase do
   end
 
   setup tags do
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Elyxel.Repo)
+
     unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(Elyxel.Repo, [])
+      Ecto.Adapters.SQL.Sandbox.mode(Elyxel.Repo, {:shared, self()})
     end
 
     :ok
