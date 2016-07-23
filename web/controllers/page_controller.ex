@@ -14,7 +14,8 @@ defmodule Elyxel.PageController do
   plug Openmaize.Logout when action in [:logout]
 
   def index(conn, _params) do
-    render conn, "index.html"
+    render conn, "index.html",
+      layout: {Elyxel.LayoutView, "home.html"}
   end
 
   def login(conn, _params) do
