@@ -33,7 +33,6 @@ sup[id*="fnref"] a {
 .footnotes {
   padding-top: calc(var(--baseline) * 2);
   font-size: .7778rem;
-  font-family: var(--sans-serif);
 
   color: var(--meta-color)
 }
