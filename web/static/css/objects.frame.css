@@ -1,0 +1,10 @@
+/*
+ * Frames object
+ * ===========
+ *
+ */
+
+.wrap {
+  max-width: 36rem;
+  margin: 0 auto;
+}

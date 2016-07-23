@@ -1,0 +1,37 @@
+/*
+ * Base Styles
+ * ===========
+ *
+ * Base CSS styles for common HTML elements
+ *
+ */
+
+html {
+  font: 112.5%/1.7778 var(--serif);
+  color: var(--text-color);
+  background-color: #fff;
+
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "liga", "hist", "onum";
+}
+
+  .wf-loading:root {
+    --serif: var(--serif-fallback);
+    --sans-serif: var(--sans-serif-fallback);
+
+    font-family: --serif-fallback;
+    font-size: 118.75%;
+    line-height: 1.6842;
+  }
+
+  @media (max-width: 40rem) {
+    html {
+      font-size: 100%;
+    }
+  }
+
+  @media (max-width: 30rem) {
+    html {
+      font-size: 87.5%;
+    }
+  }
