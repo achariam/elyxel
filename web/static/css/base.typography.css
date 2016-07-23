@@ -26,7 +26,7 @@ h3, .h3 {
   }
 
 h2, .h2 {
-  font-family: var(--sans-serif);
+  font-family: var(--system-fonts);
 }
 
 h3, .h3 {
@@ -54,7 +54,7 @@ a {
   }
 
 code, pre {
-  font-family: var(--monospace);
+  font-family: var(--system-fonts);
   font-size: .875rem;
 }
 

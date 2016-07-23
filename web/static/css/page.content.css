@@ -24,7 +24,7 @@ sup[id*="fnref"] a {
   margin: 0 .2em;
 
   text-decoration: none;
-  font-family: var(--sans-serif);
+  font-family: var(--system-fonts);
   font-size: .7778rem;
 
   color: var(--site-color);

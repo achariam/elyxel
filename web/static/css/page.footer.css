@@ -5,7 +5,7 @@
  */
 
 .site__footer {
-  font-family: var(--sans-serif);
+  font-family: var(--system-fonts);
 
   color: var(--meta-color);
   border-top: 1px solid currentColor;

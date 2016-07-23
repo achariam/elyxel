@@ -13,7 +13,7 @@
 }
 
   .site__nav {
-    font-family: var(--sans-serif);
+    font-family: var(--system-fonts);
   }
 
     .site__nav a {
