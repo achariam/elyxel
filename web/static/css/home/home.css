@@ -99,14 +99,14 @@ svg {
 }
 
 .strike {
-  stroke-dasharray: 10000;
-  stroke-dashoffset: 10000;
-  animation: draw 8s linear alternate forwards;
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+  animation: draw 2s linear alternate forwards;
 }
 
 @keyframes draw {
   from {
-    stroke-dashoffset: 10000;
+    stroke-dashoffset: 3000;
   }
   to {
     stroke-dashoffset: 0;
