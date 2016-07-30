@@ -1,2 +1,9 @@
-<h1 class="word-mark">elyxel</h1>
-<a href="<%= login_path @conn, :login %>" class="login-button">login</a>
+<div class="wrap">
+	<div class="word-mark">
+		<h1 class="elyxel">elyxel</h1>
+	</div>
+
+	<div class="login">
+		<a href="<%= login_path @conn, :login %>" class="login-button">login</a>
+	</div>
+</div>

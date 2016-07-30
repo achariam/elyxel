@@ -57,8 +57,24 @@ html {
  * Home
  * ====
  */
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100vw;
+ }
 
-.word-mark {
+.login {
+  align-self: flex-start;
+  padding: 1em;
+ }
+
+ .word-mark {
+  align-self: flex-end;
+  padding: 1em;
+ }
+
+.elyxel {
   font-weight: 100;
   letter-spacing: 0.075em;
 }
@@ -71,7 +87,8 @@ a {
 
 .login-button {
   border: 1px solid var(--smoke-color);
-  padding: 2px 12px;
-  border-radius: 14px;
+  padding: 0.3em 1em;
+  border-radius: 1em;
+  align-self: flex-start;
 }
 
