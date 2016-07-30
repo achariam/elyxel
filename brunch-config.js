@@ -27,10 +27,10 @@ exports.config = {
       },
       order: {
         before: [
-          "web/static/css/base.variables.css",
-          "web/static/css/base.typography.css",
-          "web/static/css/base.reset.css",
-          "web/static/css/base.base.css",
+          "web/static/css/app/base.variables.css",
+          "web/static/css/app/base.typography.css",
+          "web/static/css/app/base.reset.css",
+          "web/static/css/app/base.base.css",
         ],
         after: []
       }
