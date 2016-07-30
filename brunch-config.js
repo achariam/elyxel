@@ -31,14 +31,6 @@ exports.config = {
           "web/static/css/base.typography.css",
           "web/static/css/base.reset.css",
           "web/static/css/base.base.css",
-          "web/static/css/objects.frame.css",
-          "web/static/css/objects.nav.css",
-          "web/static/css/page.header.css",
-          "web/static/css/page.content.css",
-          "web/static/css/page.images.css",
-          "web/static/css/page.footer.css",
-          "web/static/css/utilities.display.css",
-          "web/static/css/utilities.spacing.css",
         ],
         after: []
       }
