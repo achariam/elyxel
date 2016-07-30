@@ -1,3 +1,34 @@
+<svg viewBox="0 0 2000 2000" preserveAspectRatio="none">
+		<defs>
+	    <linearGradient x1="13.3331158%" y1="-10.3402405%" x2="77.7160074%" y2="95.8815026%" id="peach-gold">
+	      <stop stop-color="#EB4D51" offset="0%"></stop>
+	      <stop stop-color="#FF6374" offset="27.5948661%"></stop>
+	      <stop stop-color="#DC974E" offset="65.9359056%"></stop>
+	      <stop stop-color="#FFBD29" offset="100%"></stop>
+	    </linearGradient>
+
+	    <linearGradient x1="50%" y1="0%" x2="50%" y2="97.2417092%" id="aqua-leaf">
+	      <stop stop-color="#16664B" offset="0%"></stop>
+	      <stop stop-color="#33CE6D" offset="28.125%"></stop>
+	      <stop stop-color="#68E4D0" offset="58.9684311%"></stop>
+	      <stop stop-color="#50CBD6" offset="100%"></stop>
+	    </linearGradient>
+
+	    <linearGradient x1="50%" y1="0%" x2="50%" y2="96.9666773%" id="royal-sunset">
+	        <stop stop-color="#89B0D6" offset="0%"></stop>
+	        <stop stop-color="#6380FF" offset="29.9346301%"></stop>
+	        <stop stop-color="#784FBC" offset="67.5103635%"></stop>
+	        <stop stop-color="#623CA1" offset="100%"></stop>
+	    </linearGradient>
+		</defs>
+
+    <g class="strike" stroke-width="1" fill="none">
+	    <path d="M0,0 C113.82991,370.836921 146.940985,731.118171 807.039674,908.954109 C1467.13836,1086.79005 1554.26741,1398.60255 2000,2000" stroke="url(#peach-gold)"></path>
+	    <path d="M0,0 C113.82991,370.836921 146.940985,731.118171 807.039674,908.954109 C1467.13836,1086.79005 1554.26741,1398.60255 2200,2200" stroke="url(#aqua-leaf)" transform='rotate(15 1000 1000)'></path>
+	    <path d="M0,0 C113.82991,370.836921 146.940985,731.118171 807.039674,908.954109 C1467.13836,1086.79005 1554.26741,1398.60255 2200,2200" stroke="url(#royal-sunset)" transform='rotate(-15 1000 1000)'></path>
+    </g>
+</svg>
+
 <div class="wrap">
 	<div class="word-mark">
 		<h1 class="elyxel">elyxel</h1>
