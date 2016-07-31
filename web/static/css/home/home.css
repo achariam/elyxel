@@ -156,7 +156,7 @@ input[type=password] {
 
 input:focus {
   outline: none;
-  border-bottom: 1px solid var(--salmon-color);
+  border-bottom: 1px solid var(--text-color);
 }
 
 ::-webkit-input-placeholder {
@@ -165,7 +165,7 @@ input:focus {
   letter-spacing: 0.075em;
 }
 
-.submit-button {
+input[type=submit] {
   font-size: .75em;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -178,6 +178,14 @@ input:focus {
   cursor: pointer;
 }
 
-.submit-button:hover {
+input[type=submit]:hover {
   opacity: .9;
+}
+
+.notifications {
+  text-align: center;
+  width: 100vw;
+  background: var(--salmon-color);
+  color: var(--white-color);
+  vertical-align: middle;
 }

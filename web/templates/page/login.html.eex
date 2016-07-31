@@ -1,21 +1,20 @@
 <div class="login-wrap">
-    <%= get_flash(@conn, :info) %>
-    <%= get_flash(@conn, :error) %>
 
     <%= form_for @conn, login_path(@conn, :login_user), [as: :user], fn f -> %>
-      <%= if f.errors != [] do %>
-          <p>Please check the errors below:</p>
-          <ul>
-            <%= for {attr, message} <- f.errors do %>
-              <li><%= humanize(attr) %> <%= message %></li>
-            <% end %>
-          </ul>
-      <% end %>
+      <ul class="notifications">
+        <li><%= get_flash(@conn, :info) %></li>
+        <li><%= get_flash(@conn, :error) %></li>
+        <%= if f.errors != [] do %>
+          <%= for {attr, message} <- f.errors do %>
+            <li><%= humanize(attr) %> <%= message %></li>
+          <% end %>
+        <% end %>
+      </ul>
 
       <%= text_input f, :email, placeholder: "email" %>
       <%= password_input f, :password, placeholder: "password" %>
       <div class="login-controls">
-        <%= submit "sign in", class: "submit-button" %>
+        <%= submit "sign in" %>
         <%= link "Forgot your password?", to: page_path(@conn, :askreset), class: "forgot-pass" %>
       </div>
     <% end %>
