@@ -34,7 +34,7 @@
 		<h1 class="elyxel">elyxel</h1>
 	</div>
 
-	<div class="login">
+	<div class="nav">
 		<a href="<%= login_path @conn, :login %>" class="login-button">Sign in</a>
 	</div>
 </div>

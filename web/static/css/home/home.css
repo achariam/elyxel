@@ -6,7 +6,11 @@
   --baseline: 1.7778rem;
 
   --text-color: #434648;
-  --smoke-color: #d8dee3;
+  --slate-color: #949494;
+  --smoke-color: #D8DEE3;
+  --midnight-color: #0D2434;
+  --white-color: #FFFFFF;
+  --salmon-color: #EA4C50;
 
   --system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI",
                   Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
@@ -64,7 +68,7 @@ html {
   width: 100vw;
  }
 
-.login {
+.nav {
   align-self: flex-start;
   padding: 1em;
  }
@@ -89,7 +93,6 @@ a {
   border: 1px solid var(--smoke-color);
   padding: 0.3em 1em;
   border-radius: 1em;
-  align-self: flex-start;
 }
 
 svg {
@@ -111,4 +114,60 @@ svg {
   to {
     stroke-dashoffset: 0;
   }
+}
+/*
+ * Login
+ * =====
+ */
+.login-wrap {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+}
+
+form {
+  margin: 0 auto;
+}
+
+input[type=text],
+input[type=password] {
+  display: block;
+  width: 100vw;
+  margin: 2em 0;
+  border: 1px solid var(--smoke-color);
+  border-width: 0 0 1px 0;
+  text-align: center;
+}
+
+.login-controls {
+  text-align: right;
+}
+
+.forgot-pass {
+  color: var(--slate-color);
+  padding: 0 2rem;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 1px solid var(--salmon-color);
+}
+
+::-webkit-input-placeholder {
+  color: var(--slate-color);
+  font-weight: 100;
+  letter-spacing: 0.075em;
+}
+
+.submit-button {
+  font-size: .75em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--midnight-color);
+  color: var(--white-color);
+  padding: 0.3em 3em;
+  border-radius: 2em;
+  border: none;
 }

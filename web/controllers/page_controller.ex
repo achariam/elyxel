@@ -19,7 +19,8 @@ defmodule Elyxel.PageController do
   end
 
   def login(conn, _params) do
-    render conn, "login.html"
+    render conn, "login.html",
+      layout: {Elyxel.LayoutView, "home.html"}
   end
 
   def login_user(conn, params) do
