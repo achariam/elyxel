@@ -1,25 +1,23 @@
-<h2>Reset password</h2>
-
-<%= form_for @conn, page_path(@conn, :askreset), [as: :user], fn f -> %>
-  <%= if f.errors != [] do %>
-    <div class="alert alert-error">
-      <p>Please check the errors below:</p>
-      <ul>
+<div class="form-wrap">
+  <%= form_for @conn, page_path(@conn, :askreset), [as: :user], fn f -> %>
+    <ul class="notifications">
+      <%= if get_flash(@conn, :info) do %>
+        <li role="alert"><%= get_flash(@conn, :info) %></li>
+      <% end %>
+      <%= if get_flash(@conn, :error) do %>
+        <li role="alert"><%= get_flash(@conn, :error) %></li>
+      <% end %>
+      <%= if f.errors != [] do %>
         <%= for {attr, message} <- f.errors do %>
-          <li><%= humanize(attr) %> <%= message %></li>
+          <li role="alert"><%= humanize(attr) %> <%= message %></li>
         <% end %>
-      </ul>
+      <% end %>
+    </ul>
+
+    <%= text_input f, :email, placeholder: "email" %>
+
+    <div class="form-controls">
+      <%= submit "reset" %>
     </div>
   <% end %>
-
-  <h4>Please enter your email address</h4>
-
-  <div class="form-group">
-    <label>Email</label>
-    <%= text_input f, :email, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= submit "Submit", class: "btn" %>
-  </div>
-<% end %>
+</div>

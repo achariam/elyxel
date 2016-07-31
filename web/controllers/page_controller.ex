@@ -36,7 +36,8 @@ defmodule Elyxel.PageController do
   end
 
   def askreset(conn, _params) do
-    render conn, "askreset_form.html"
+    render conn, "askreset_form.html",
+      layout: {Elyxel.LayoutView, "home.html"}
   end
 
   def askreset_password(conn, %{"user" => %{"email" => email} = user_params}) do

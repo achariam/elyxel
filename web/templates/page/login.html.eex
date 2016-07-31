@@ -1,5 +1,4 @@
-<div class="login-wrap">
-
+<div class="form-wrap">
     <%= form_for @conn, login_path(@conn, :login_user), [as: :user], fn f -> %>
       <ul class="notifications">
         <%= if get_flash(@conn, :info) do %>
@@ -17,7 +16,7 @@
 
       <%= text_input f, :email, placeholder: "email" %>
       <%= password_input f, :password, placeholder: "password" %>
-      <div class="login-controls">
+      <div class="form-controls">
         <%= submit "sign in" %>
         <%= link "Forgot your password?", to: page_path(@conn, :askreset), class: "forgot-pass" %>
       </div>
