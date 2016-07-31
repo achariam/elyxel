@@ -1,6 +1,6 @@
 <div class="login-wrap">
-    <p class="alert alert-info"><%= get_flash(@conn, :info) %></p>
-    <p class="alert alert-error"><%= get_flash(@conn, :error) %></p>
+    <%= get_flash(@conn, :info) %>
+    <%= get_flash(@conn, :error) %>
 
     <%= form_for @conn, login_path(@conn, :login_user), [as: :user], fn f -> %>
       <%= if f.errors != [] do %>

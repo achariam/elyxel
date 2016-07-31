@@ -147,6 +147,11 @@ input[type=password] {
 .forgot-pass {
   color: var(--slate-color);
   padding: 0 2rem;
+  font-size: .75em;
+}
+
+.forgot-pass:hover {
+  color: var(--text-color);
 }
 
 input:focus {
@@ -170,4 +175,9 @@ input:focus {
   padding: 0.3em 3em;
   border-radius: 2em;
   border: none;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  opacity: .9;
 }
