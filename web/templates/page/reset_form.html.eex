@@ -1,5 +1,3 @@
-<h2>Reset your password</h2>
-
 <%= form_for @conn, page_path(@conn, :reset_password), [as: :user], fn f -> %>
   <%= if f.errors != [] do %>
     <div class="alert alert-error">
