@@ -74,17 +74,18 @@ html {
 
 .nav {
   align-self: flex-start;
-  margin: 1em;
+  margin: 2em;
  }
 
  .word-mark {
   align-self: flex-end;
-  margin: 1em;
+  margin: 2em;
  }
 
 .elyxel {
   font-weight: 100;
   letter-spacing: 0.075em;
+  font-size: 2rem;
 }
 
 a {
