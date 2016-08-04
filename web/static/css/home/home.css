@@ -46,15 +46,19 @@ html {
   background: none;
 }
 
-  @media (max-width: 40rem) {
+  @media (max-width: 40em) {
     html {
       font-size: 87.5%;
     }
   }
 
-  @media (max-width: 30rem) {
+  @media (max-width: 30em) {
     html {
       font-size: 62.5%
+    }
+
+    .word-mark {
+      padding-bottom: 7em;
     }
   }
 /*
@@ -70,12 +74,12 @@ html {
 
 .nav {
   align-self: flex-start;
-  padding: 1em;
+  margin: 1em;
  }
 
  .word-mark {
   align-self: flex-end;
-  padding: 1em;
+  margin: 1em;
  }
 
 .elyxel {
@@ -128,6 +132,11 @@ svg {
 
 form {
   margin: 0 auto;
+}
+
+input {
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 input[type=text],
