@@ -1,31 +1,28 @@
-<%= form_for @conn, page_path(@conn, :reset_password), [as: :user], fn f -> %>
-  <%= if f.errors != [] do %>
-    <div class="alert alert-error">
-      <p>Please check the errors below:</p>
-      <ul>
-        <%= for {attr, message} <- f.errors do %>
-          <li><%= humanize(attr) %> <%= message %></li>
+<div class="form-wrap">
+    <%= form_for @conn, page_path(@conn, :reset_password), [as: :user], fn f -> %>
+      <ul class="notifications">
+        <%= if get_flash(@conn, :info) do %>
+          <li role="alert"><%= get_flash(@conn, :info) %></li>
+        <% end %>
+        <%= if get_flash(@conn, :error) do %>
+          <li role="alert"><%= get_flash(@conn, :error) %></li>
+        <% end %>
+        <%= if f.errors != [] do %>
+          <%= for {attr, message} <- f.errors do %>
+            <li role="alert"><%= humanize(attr) %> <%= message %></li>
+          <% end %>
         <% end %>
       </ul>
-    </div>
-  <% end %>
 
-  <div class="form-group">
-    <label>Password</label>
-    <%= password_input f, :password, class: "form-control" %>
-  </div>
+      <%= password_input f, :password, placeholder: "new password" %>
+      <%= password_input f, :confirm_password, placeholder: "re-enter new password" %>
 
-  <div class="form-group">
-    <label>Confirm password</label>
-    <%= password_input f, :confirm_password, class: "form-control" %>
-  </div>
+      <%= hidden_input f, :email, value: @email %>
+      <%= hidden_input f, :key, value: @key %>
 
-  <%= hidden_input f, :email, value: @email %>
-  <%= hidden_input f, :key, value: @key %>
+      <div class="form-controls">
+        <%= submit "set password" %>
+      </div>
+    <% end %>
+</div>
 
-  <div class="form-group">
-    <%= submit "Submit", class: "btn" %>
-  </div>
-<% end %>
-
-<%= link "Back", to: page_path(@conn, :index) %>

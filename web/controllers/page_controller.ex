@@ -5,6 +5,8 @@ defmodule Elyxel.PageController do
   alias Openmaize.Login.Name
   alias Elyxel.{Mailer, User}
 
+  plug :put_layout, "home.html"
+
   plug Openmaize.ConfirmEmail, [db_module: Elyxel.OpenmaizeEcto, key_expires_after: 30,
     mail_function: &Mailer.receipt_confirm/1] when action in [:confirm]
   plug Openmaize.ResetPassword, [db_module: Elyxel.OpenmaizeEcto, key_expires_after: 30,
@@ -14,13 +16,11 @@ defmodule Elyxel.PageController do
   plug Openmaize.Logout when action in [:logout]
 
   def index(conn, _params) do
-    render conn, "index.html",
-      layout: {Elyxel.LayoutView, "home.html"}
+    render conn, "index.html"
   end
 
   def login(conn, _params) do
-    render conn, "login.html",
-      layout: {Elyxel.LayoutView, "home.html"}
+    render conn, "login.html"
   end
 
   def login_user(conn, params) do
@@ -36,8 +36,7 @@ defmodule Elyxel.PageController do
   end
 
   def askreset(conn, _params) do
-    render conn, "askreset_form.html",
-      layout: {Elyxel.LayoutView, "home.html"}
+    render conn, "askreset_form.html"
   end
 
   def askreset_password(conn, %{"user" => %{"email" => email} = user_params}) do

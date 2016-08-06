@@ -16,6 +16,7 @@
 
       <%= text_input f, :email, placeholder: "email" %>
       <%= password_input f, :password, placeholder: "password" %>
+
       <div class="form-controls">
         <%= submit "sign in" %>
         <%= link "Forgot your password?", to: page_path(@conn, :askreset), class: "forgot-pass" %>

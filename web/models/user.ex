@@ -39,13 +39,13 @@ defmodule Elyxel.User do
   def auth_changeset(model, params, key) do
     model
     |> changeset(params)
-    |> DB.add_password_hash(params)
-    |> DB.add_confirm_token(key)
+    |> OpenmaizeEcto.add_password_hash(params)
+    |> OpenmaizeEcto.add_confirm_token(key)
   end
 
   def reset_changeset(model, params, key) do
     model
     |> cast(params, ~w(email), [])
-    |> DB.add_reset_token(key)
+    |> OpenmaizeEcto.add_reset_token(key)
   end
 end
