@@ -109,7 +109,7 @@ svg {
 .strike {
   stroke-dasharray: 3000;
   stroke-dashoffset: 3000;
-  animation: draw 2s linear alternate forwards;
+  animation: draw 1s linear alternate forwards;
 }
 
 @keyframes draw {
