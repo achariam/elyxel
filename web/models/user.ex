@@ -9,7 +9,7 @@ defmodule Elyxel.User do
     field :first_name, :string
     field :last_name, :string
     field :password_hash, :string
-    field :role, :string
+    field :role, :string, default: "user"
     field :confirmed_at, Ecto.DateTime
     field :confirmation_token, :string
     field :confirmation_sent_at, Ecto.DateTime
