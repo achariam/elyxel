@@ -1,0 +1,27 @@
+<div class="form-wrap">
+    <%= form_for @changeset, registration_path(@conn, :create), fn f -> %>
+      <ul class="notifications">
+        <%= if get_flash(@conn, :info) do %>
+          <li role="alert"><%= get_flash(@conn, :info) %></li>
+        <% end %>
+        <%= if get_flash(@conn, :error) do %>
+          <li role="alert"><%= get_flash(@conn, :error) %></li>
+        <% end %>
+        <%= if f.errors != [] do %>
+          <%= for {attr, message} <- f.errors do %>
+            <li role="alert"><%= humanize(attr) %> <%= message %></li>
+          <% end %>
+        <% end %>
+      </ul>
+
+      <%= text_input f, :username, placeholder: "Username" %>
+      <%= text_input f, :email, placeholder: "Email" %>
+      <%= password_input f, :password, placeholder: "Password" %>
+      <%= password_input f, :password_confirmation, placeholder: "Re-enter Password" %>
+      <%= text_input f, :role, placeholder: "Role" %>
+
+      <div class="form-controls">
+        <%= submit "Register" %>
+      </div>
+    <% end %>
+</div>
