@@ -179,7 +179,6 @@ input[type=submit] {
   font-size: .75em;
   font-weight: 500;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   background: var(--midnight-color);
   color: var(--white-color);
   padding: 0.3em 3em;

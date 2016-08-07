@@ -14,10 +14,10 @@
       <% end %>
     </ul>
 
-    <%= text_input f, :email, placeholder: "email" %>
+    <%= text_input f, :email, placeholder: "Email" %>
 
     <div class="form-controls">
-      <%= submit "reset" %>
+      <%= submit "Reset" %>
     </div>
   <% end %>
 </div>

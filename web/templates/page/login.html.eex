@@ -14,12 +14,12 @@
         <% end %>
       </ul>
 
-      <%= text_input f, :email, placeholder: "email" %>
-      <%= password_input f, :password, placeholder: "password" %>
+      <%= text_input f, :email, placeholder: "Email" %>
+      <%= password_input f, :password, placeholder: "Password" %>
 
       <div class="form-controls">
-        <%= submit "sign in" %>
-        <%= link "Forgot your password?", to: page_path(@conn, :askreset), class: "forgot-pass" %>
+        <%= submit "Sign In" %>
+        <%= link "Forgot Your Password?", to: page_path(@conn, :askreset), class: "forgot-pass" %>
       </div>
     <% end %>
 </div>

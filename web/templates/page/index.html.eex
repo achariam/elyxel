@@ -35,6 +35,6 @@
 	</div>
 
 	<div class="nav">
-		<a href="<%= login_path @conn, :login %>" class="login-button">Sign in</a>
+		<a href="<%= login_path @conn, :login %>" class="login-button">Sign In</a>
 	</div>
 </div>

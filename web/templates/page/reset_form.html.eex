@@ -14,14 +14,14 @@
         <% end %>
       </ul>
 
-      <%= password_input f, :password, placeholder: "new password" %>
-      <%= password_input f, :confirm_password, placeholder: "re-enter new password" %>
+      <%= password_input f, :password, placeholder: "New Password" %>
+      <%= password_input f, :confirm_password, placeholder: "Re-enter New Password" %>
 
       <%= hidden_input f, :email, value: @email %>
       <%= hidden_input f, :key, value: @key %>
 
       <div class="form-controls">
-        <%= submit "set password" %>
+        <%= submit "Set Password" %>
       </div>
     <% end %>
 </div>
