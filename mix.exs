@@ -36,7 +36,7 @@ defmodule Elyxel.Mixfile do
      {:phoenix_ecto, "~> 3.0-rc"},
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
-     {:gettext, "~> 0.9"},
+     {:gettext, "~> 0.11.0"},
      {:cowboy, "~> 1.0"},
      {:exrm, "~> 1.0.5"},
      {:openmaize, "~> 1.0"},

@@ -9,7 +9,7 @@
         <% end %>
         <%= if f.errors != [] do %>
           <%= for {attr, message} <- f.errors do %>
-            <li role="alert"><%= humanize(attr) %> <%= message %></li>
+            <li role="alert"><%= humanize(attr) %> : <%= translate_error(message) %></li>
           <% end %>
         <% end %>
       </ul>
@@ -18,7 +18,6 @@
       <%= text_input f, :email, placeholder: "Email" %>
       <%= password_input f, :password, placeholder: "Password" %>
       <%= password_input f, :password_confirmation, placeholder: "Re-enter Password" %>
-      <%= text_input f, :role, placeholder: "Role" %>
 
       <div class="form-controls">
         <%= submit "Register" %>

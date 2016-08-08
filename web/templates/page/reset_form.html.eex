@@ -9,7 +9,7 @@
         <% end %>
         <%= if f.errors != [] do %>
           <%= for {attr, message} <- f.errors do %>
-            <li role="alert"><%= humanize(attr) %> <%= message %></li>
+            <li role="alert"><%= humanize(attr) %> : <%= translate_error(message) %></li>
           <% end %>
         <% end %>
       </ul>
