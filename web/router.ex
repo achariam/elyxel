@@ -23,7 +23,7 @@ defmodule Elyxel.Router do
     post "/login", PageController, :login_user, as: :login
     delete "/logout", PageController, :logout, as: :logout
 
-    get "/signup", RegistrationController, :new
+    get "/signup", RegistrationController, :signup
     post "/signup", RegistrationController, :create
   end
 

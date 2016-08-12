@@ -7,9 +7,9 @@ defmodule Elyxel.RegistrationController do
   plug :scrub_params, "user" when action in [:create]
   plug :put_layout, "home.html"
 
-  def new(conn, _params) do
+  def signup(conn, _params) do
     changeset = User.changeset(%User{})
-    render conn, "new.html", changeset: changeset
+    render conn, "signup.html", changeset: changeset
   end
 
   def create(conn, %{"user" => %{"email" => email} = user_params}) do
@@ -23,7 +23,7 @@ defmodule Elyxel.RegistrationController do
         |> put_flash(:info, "User created successfully.")
         |> redirect(to: page_path(conn, :index))
       {:error, changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        render(conn, "signup.html", changeset: changeset)
     end
   end
 
