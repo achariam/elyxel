@@ -10,7 +10,7 @@
     </div>
   <% end %>
 
-  <h3><%= @current_user[:username] %></h3>
+  <h3><%= @current_user.username %></h3>
 
   <div class="form-group">
     <label>About me</label>

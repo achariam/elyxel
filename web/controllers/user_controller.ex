@@ -8,7 +8,7 @@ defmodule Elyxel.UserController do
   plug :scrub_params, "user" when action in [:create, :update]
   plug :id_check when action in [:show, :edit, :update]
 
-  def action(conn, _), do: authorize_action conn, ["admin", "user"], __MODULE__
+  def action(conn, _), do: auth_action_role conn, ["admin", "user"], __MODULE__
 
   def index(conn, _params, _user) do
     users = Repo.all(User)

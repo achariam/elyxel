@@ -7,7 +7,7 @@ defmodule Elyxel.AdminController do
 
   plug :scrub_params, "user" when action in [:create]
 
-  def action(conn, _), do: authorize_action conn, ["admin"], __MODULE__
+  def action(conn, _), do: auth_action_role conn, ["admin"], __MODULE__
 
   def index(conn, _params, _user) do
     users = Repo.all(User)
