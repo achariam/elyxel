@@ -10,6 +10,4 @@ defmodule Elyxel.WireController do
 	  wires = Repo.all(Wire)
 	  render(conn, "index.html", wires: wires)
 	end
-
-
 end

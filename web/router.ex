@@ -38,6 +38,7 @@ defmodule Elyxel.Router do
 
     get "/", AdminController, :index
     resources "/users", AdminController, only: [:new, :create, :delete]
+    resources "/invites", InviteController, only: [:new, :create, :delete]
   end
 
   scope "/top", Elyxel do
