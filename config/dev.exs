@@ -47,3 +47,7 @@ config :openmaize,
   user_model: Elyxel.User,
   repo: Elyxel.Repo,
   password_strength: [min_length: 8, extra_chars: true, common: true]
+
+# Import dev secrets
+# Don't check in to version control
+import_config "dev.secret.exs"
