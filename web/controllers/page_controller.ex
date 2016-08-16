@@ -13,7 +13,6 @@ defmodule Elyxel.PageController do
     mail_function: &Mailer.receipt_confirm/1] when action in [:reset_password]
 
   plug Openmaize.Login, [db_module: Elyxel.OpenmaizeEcto, unique_id: &Name.email_username/1, override_exp: 10_080] when action in [:login_user]
-  plug Openmaize.Logout when action in [:logout]
 
   def index(conn, _params) do
     render conn, "index.html"

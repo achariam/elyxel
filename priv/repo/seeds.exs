@@ -17,6 +17,8 @@ users = [
   %{
     email: "matt@mail.com",
     username: "matt",
+    first_name: "matt",
+    last_name: "achariam",
     password_hash: Comeonin.Bcrypt.hashpwsalt("helloworld"),
     role: "admin",
     confirmed_at: Ecto.DateTime.utc
@@ -24,6 +26,8 @@ users = [
   %{
     email: "alpha@mail.com",
     username: "alpha",
+    first_name: "alpha",
+    last_name: "gamma",
     password_hash: Comeonin.Bcrypt.hashpwsalt("helloworld"),
     role: "user",
     confirmed_at: Ecto.DateTime.utc

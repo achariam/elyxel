@@ -3,12 +3,12 @@ defmodule Elyxel.Repo.Migrations.CreateUser do
 
   def change do
     create table(:users) do
-      add :email, :string
-      add :username, :string
-      add :first_name, :string
-      add :last_name, :string
-      add :password_hash, :string
-      add :role, :string
+      add :email, :string, null: false, size: 250
+      add :username, :string, null: false, size: 100
+      add :first_name, :string, null: false, size: 100
+      add :last_name, :string, null: false, size: 100
+      add :password_hash, :string, null: false
+      add :role, :string, null: false
       add :confirmed_at, :datetime
       add :confirmation_token, :string
       add :confirmation_sent_at, :datetime

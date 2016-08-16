@@ -9,7 +9,7 @@ defmodule Elyxel.User do
     field :first_name, :string
     field :last_name, :string
     field :password_hash, :string
-    field :role, :string
+    field :role, :string, default: "user"
     field :confirmed_at, Ecto.DateTime
     field :confirmation_token, :string
     field :confirmation_sent_at, Ecto.DateTime
@@ -20,8 +20,8 @@ defmodule Elyxel.User do
     timestamps
   end
 
-  @required_fields ~w(email username first_name last_name password_hash role confirmed_at confirmation_token confirmation_sent_at reset_token reset_sent_at)
-  @optional_fields ~w()
+  @required_fields ~w(email username first_name last_name password_hash)
+  @optional_fields ~w(confirmed_at confirmation_token confirmation_sent_at reset_token reset_sent_at)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
@@ -29,11 +29,13 @@ defmodule Elyxel.User do
   If no params are provided, an invalid changeset is returned
   with no validation performed.
   """
-  def changeset(model, params \\ :empty) do
+  def changeset(model, params \\ %{}) do
     model
-    |> cast(params, ~w(email role), ~w(username))
+    |> cast(params, @required_fields)
     |> validate_length(:username, min: 1, max: 100)
-    |> unique_constraint(:email)
+    |> unique_constraint(:username, message: "Username already taken.")
+    |> validate_format(:email, ~r/@/, message: "Please enter a valid email address.")
+    |> unique_constraint(:email, message: "Email already registered.")
   end
 
   def auth_changeset(model, params, key) do

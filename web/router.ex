@@ -7,7 +7,7 @@ defmodule Elyxel.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
-    plug Openmaize.Authenticate
+    plug Openmaize.Authenticate, db_module: Elyxel.OpenmaizeEcto
   end
 
   scope "/", Elyxel do
@@ -22,6 +22,9 @@ defmodule Elyxel.Router do
     get "/login", PageController, :login, as: :login
     post "/login", PageController, :login_user, as: :login
     delete "/logout", PageController, :logout, as: :logout
+
+    get "/signup", RegistrationController, :signup
+    post "/signup", RegistrationController, :create
   end
 
   scope "/users", Elyxel do
@@ -35,6 +38,7 @@ defmodule Elyxel.Router do
 
     get "/", AdminController, :index
     resources "/users", AdminController, only: [:new, :create, :delete]
+    resources "/invites", InviteController, only: [:new, :create, :delete]
   end
 
   scope "/top", Elyxel do

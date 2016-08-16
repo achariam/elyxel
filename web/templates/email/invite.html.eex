@@ -1,9 +1,9 @@
 <!doctype html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Email Confirmed</title>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>You've been invited to Elyxel ⚡</title>
     <style>
       /* -------------------------------------
           GLOBAL RESETS
@@ -124,7 +124,7 @@
           BUTTONS
       ------------------------------------- */
       .btn {
-      	margin: 20px 0;
+        margin: 20px 0;
         box-sizing: border-box;
         width: 100%; }
         .btn > tbody > tr > td {
@@ -148,7 +148,7 @@
           margin: 0;
           padding: 12px 25px;
           text-decoration: none;
-          text-transform: capitalize; }
+        }
 
       .btn-primary table td {
         background-color: #0D2434; }
@@ -157,7 +157,7 @@
         border-color: #0D2434;
         font-size: 14px;
         font-weight: 500;
-        letter-spacing: 1px;
+        text-transform: capitalize;
         background: #0D2434;
         color: #FFFFFF;
         padding: 10px 20px;
@@ -232,24 +232,57 @@
 
     </style>
   </head>
-  <body class="">
-    <table border="0" cellpadding="0" cellspacing="0" class="body">
+  <body class="" style="background-color: #FFFFFF;font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;,
+                  Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;,
+                  &quot;Helvetica Neue&quot;, sans-serif;-webkit-font-smoothing: antialiased;font-size: 14px;line-height: 1.4;margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;background-color: #FFFFFF;color: #434648;">
       <tr>
-        <td>&nbsp;</td>
-        <td class="container">
-          <div class="content">
+        <td style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;,
+                  Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;,
+                  &quot;Helvetica Neue&quot;, sans-serif;font-size: 16px !important;vertical-align: top;">&nbsp;</td>
+        <td class="container" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;,
+                  Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;,
+                  &quot;Helvetica Neue&quot;, sans-serif;font-size: 16px !important;vertical-align: top;display: block;max-width: 580px;padding: 0 !important;width: 100% !important;margin: 0 auto !important;">
+          <div class="content" style="box-sizing: border-box;display: block;margin: 0 auto;max-width: 580px;padding: 0 !important;">
 
             <!-- START CENTERED WHITE CONTAINER -->
-            <table class="main">
+            <table class="main" style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;background: #fff;border-radius: 0 !important;border-left-width: 0 !important;border-right-width: 0 !important;">
 
               <!-- START MAIN CONTENT AREA -->
               <tr>
-                <td class="wrapper">
-                  <table border="0" cellpadding="0" cellspacing="0">
+                <td class="wrapper" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;,
+                  Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;,
+                  &quot;Helvetica Neue&quot;, sans-serif;font-size: 16px !important;vertical-align: top;box-sizing: border-box;padding: 10px !important;">
+                  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;">
                     <tr>
-                      <td>
-                        <h1>Sweet</h1>
-                        <p>Thank you for confirming your email.</p>
+                      <td style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;,
+                  Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;,
+                  &quot;Helvetica Neue&quot;, sans-serif;font-size: 16px !important;vertical-align: top;">
+                        <h1 style="color: #434648;font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;,
+                  Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;,
+                  &quot;Helvetica Neue&quot;, sans-serif;font-weight: 200;line-height: 1.4;margin: 0;margin-bottom: 30px;font-size: 48px;">Hello</h1>
+                        <p style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;,
+                  Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;,
+                  &quot;Helvetica Neue&quot;, sans-serif;font-size: 16px !important;font-weight: normal;margin: 0;margin-bottom: 15px;">We would love for you to join our experimental community over at Elyxel. We are currently in a very early alpha trial so things might be a little buggy.</p>
+                        <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;margin: 20px 0;box-sizing: border-box;">
+                          <tbody>
+                            <tr>
+                              <td align="left" style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;,
+                  Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;,
+                  &quot;Helvetica Neue&quot;, sans-serif;font-size: 16px !important;vertical-align: top;padding-bottom: 15px;">
+                                <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 95% !important;">
+                                  <tbody>
+                                    <tr>
+                                      <td style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;,
+                  Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;,
+                  &quot;Helvetica Neue&quot;, sans-serif;font-size: 16px !important;vertical-align: top;background-color: #0D2434;border-radius: 20px;text-align: center;"> <a href="<%= raw @invite_url %>" target="_blank" style="color: #FFFFFF;text-decoration: none;background-color: #FFFFFF;border: none;border-radius: 20px;box-sizing: border-box;cursor: pointer;display: inline-block;font-size: 16px !important;font-weight: 500;margin: 0 20px;padding: 10px 20px;border-color: #0D2434;text-transform: capitalize;background: #0D2434;width: 95% !important;">Join Us</a> </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </td>
                     </tr>
                   </table>
@@ -261,7 +294,9 @@
 
 <!-- END CENTERED WHITE CONTAINER --></div>
         </td>
-        <td>&nbsp;</td>
+        <td style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;,
+                  Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;,
+                  &quot;Helvetica Neue&quot;, sans-serif;font-size: 16px !important;vertical-align: top;">&nbsp;</td>
       </tr>
     </table>
   </body>

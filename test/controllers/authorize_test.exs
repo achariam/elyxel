@@ -18,39 +18,6 @@ defmodule Elyxel.AuthorizeTest do
     {:ok, conn: conn}
   end
 
-  # The first three tests can be used to test routes protected by
-  # the role_check plug or the custom action (authorize_action) function
-  test "correct user role is successfully authorized", %{conn: conn} do
-    conn = get conn, "/users"
-    assert html_response(conn, 200)
-  end
-
-  test "authorization for incorrect role fails", %{conn: conn} do
-    conn = get conn, "/admin"
-    assert redirected_to(conn) == "/users"
-  end
-
-  test "authorization for nil user fails" do
-    conn = conn() |> get("/users")
-    assert redirected_to(conn) == "/login"
-  end
-
-  # Test routes protected by the id_check plug
-  test "id check succeeds", %{conn: conn} do
-    conn = get conn, "/users/3"
-    assert html_response(conn, 200)
-  end
-
-  test "id check fails for incorrect id", %{conn: conn} do
-    conn = get conn, "/users/30"
-    assert redirected_to(conn) == "/users"
-  end
-
-  test "id check fails for nil user" do
-    conn = conn() |> get("/users/3")
-    assert redirected_to(conn) == "/login"
-  end
-
   test "login succeeds" do
     # Remove the Repo.get_by line if you are not using email confirmation
     Repo.get_by(User, %{email: "tony@mail.com"}) |> user_confirmed
