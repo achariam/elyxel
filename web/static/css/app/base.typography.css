@@ -20,32 +20,19 @@ h3, .h3 {
   font-size: 1.111rem;
 }
 
-  * + h2, * + .h2,
-  * + h3, * + .h3 {
-    padding-top: var(--baseline);
-  }
-
-h2, .h2 {
-  font-family: var(--system-fonts);
+* + h2, * + .h2,
+* + h3, * + .h3 {
+  padding-top: var(--baseline);
 }
 
 h3, .h3 {
-  text-transform: uppercase;
-  font-feature-settings: "smcp", "c2sc";
-  letter-spacing: .2em;
-  font-style: normal;
-  text-align: left;
 }
 
 h4, .h4 {
-  font-family: var(--system-fonts);
-  font-weight: 400;
-  font-size: 1rem;
-  font-style: italic;
 }
 
 a {
-  text-decoration: underline;
+  text-decoration: none;
   color: inherit;
 }
 
@@ -77,9 +64,6 @@ hr, .footnotes::before {
   padding-top: 0;
 }
 
-.meta {
-  color: var(--meta-color);
-}
 
 blockquote {
   padding-left: var(--baseline);
@@ -97,9 +81,4 @@ blockquote {
 mark {
   color: #EF540D;
   background-color: rgba(239, 84, 13, .1);
-}
-
-.caps {
-  font-feature-settings: "smcp", "c2sc", "lnum";
-  letter-spacing: .05em;
 }

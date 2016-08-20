@@ -30,6 +30,6 @@ ul, ol {
   overflow: auto;
 }
 
-  li ul, li ol {
-    margin-bottom: 0;
-  }
+li ul, li ol {
+  margin-bottom: 0;
+}

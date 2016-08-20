@@ -1,0 +1,32 @@
+/*
+ * Layout
+ * ======
+ *
+ */
+
+body * + * {
+  margin-top: var(--baseline);
+}
+
+header > *,
+ul > * {
+	margin-top: 0;
+}
+
+.structure {
+	max-width: 36rem;
+	margin: 0 auto;
+}
+
+.grid {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.grid > * {
+  flex-basis: 10em;
+  flex-grow: 1;
+  align-items: center;
+}

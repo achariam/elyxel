@@ -31,6 +31,8 @@ exports.config = {
           "web/static/css/app/base.typography.css",
           "web/static/css/app/base.reset.css",
           "web/static/css/app/base.base.css",
+          "web/static/css/app/base.layout.css",
+          "web/static/css/app/nav.css"
         ],
         after: []
       }
