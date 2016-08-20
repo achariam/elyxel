@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   <!-- icons -->
 
-  <body>
-    <header class="structure grid">
+  <body class="pad-l-r">
+    <header class="structure">
       <nav>
         <ul class="nav">
           <li><%= link "Top", to: wire_path(@conn, :index)%></li>

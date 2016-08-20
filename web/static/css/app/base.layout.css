@@ -4,11 +4,17 @@
  *
  */
 
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: var(--baseline);
+}
+
 body * + * {
   margin-top: var(--baseline);
 }
 
-header > *,
 ul > * {
 	margin-top: 0;
 }
