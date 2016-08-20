@@ -1,8 +1,10 @@
   <%= for wire <- @wires do %>
-      <tr>
-        <td><%= wire.title %></td>
-        <td><%= wire.context %></td>
-        <td><%= wire.link %></td>
-        <td><%= wire.user_id %></td>
-      </tr>
+	  <article>
+	  	<header>
+	  		<a href="<%= wire.link %>"><%= wire.title %></a>
+	  	</header>
+	  	<p><%= wire.context %></p>
+	  	<p><%= wire.user_id %></p>
+	  </article>
   <% end %>
+
