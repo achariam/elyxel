@@ -46,21 +46,21 @@ html {
   background: none;
 }
 
-  @media (max-width: 40em) {
-    html {
-      font-size: 87.5%;
-    }
+@media (max-width: 40em) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+@media (max-width: 30em) {
+  html {
+    font-size: 62.5%
   }
 
-  @media (max-width: 30em) {
-    html {
-      font-size: 62.5%
-    }
-
-    .word-mark {
-      padding-bottom: 7em;
-    }
+  .word-mark {
+    padding-bottom: 7em;
   }
+}
 /*
  * Home
  * ====

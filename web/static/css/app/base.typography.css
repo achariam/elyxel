@@ -7,8 +7,7 @@
 h1, .h1,
 h2, .h2,
 h3, .h3 {
-  font-weight: 400;
-  text-align: center;
+
 }
 
 h1, .h1 {
@@ -36,9 +35,9 @@ a {
   color: inherit;
 }
 
-  a:hover, a:focus {
-    color: var(--site-color);
-  }
+a:hover, a:focus {
+  color: var(--site-color);
+}
 
 code, pre {
   font-family: var(--system-fonts);
@@ -67,16 +66,14 @@ hr, .footnotes::before {
 
 blockquote {
   padding-left: var(--baseline);
-
   font-style: italic;
-
   border-left: 2px solid var(--site-color);
 }
 
-  blockquote em, blockquote strong {
-    font-weight: 400;
-    font-style: normal;
-  }
+blockquote em, blockquote strong {
+  font-weight: 400;
+  font-style: normal;
+}
 
 mark {
   color: #EF540D;

@@ -14,14 +14,14 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-  @media (max-width: 40rem) {
-    html {
-      font-size: 87.5%;
-    }
+@media (max-width: 40rem) {
+  html {
+    font-size: 87.5%;
   }
+}
 
-  @media (max-width: 30rem) {
-    html {
-      font-size: 75%;
-    }
+@media (max-width: 30rem) {
+  html {
+    font-size: 75%;
   }
+}

@@ -1,7 +1,7 @@
   <%= for wire <- @wires do %>
 	  <article>
 	  	<header>
-	  		<a href="<%= wire.link %>"><%= wire.title %></a>
+	  		<h2><a href="<%= wire.link %>"><%= wire.title %></a></h2>
 	  	</header>
 	  	<p><%= wire.context %></p>
 	  	<p><%= wire.user_id %></p>
