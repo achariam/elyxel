@@ -14,6 +14,14 @@ wires = [
     pluses: 24,
     minuses: 2,
     user: Elyxel.User |> Elyxel.Repo.get!(1)
+  },
+  %{
+    title: "Kicksat",
+    link: "https://github.com/kicksat",
+    context: "A tiny open source spacecraft project.",
+    pluses: 54,
+    minuses: 7,
+    user: Elyxel.User |> Elyxel.Repo.get!(1)
   }
 ]
 
