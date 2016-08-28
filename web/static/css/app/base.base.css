@@ -5,8 +5,8 @@
  */
 
 html {
-  font-size: 100%;
-  line-height: 1.7778;
+  font-size: 87.5%;
+  line-height: var(--baseline);
   font-family: var(--system-fonts);
   color: var(--text-color);
   background-color: #fff;
@@ -15,13 +15,7 @@ html {
 }
 
 @media (max-width: 40rem) {
-  html {
-    font-size: 87.5%;
-  }
 }
 
 @media (max-width: 30rem) {
-  html {
-    font-size: 75%;
-  }
 }
