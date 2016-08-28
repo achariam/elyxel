@@ -32,11 +32,3 @@ header {
 	align-items: center;
 	justify-content: space-between;
 }
-
-body * + * {
-  margin-top: var(--baseline);
-}
-
-ul > * {
-	margin-top: 0;
-}

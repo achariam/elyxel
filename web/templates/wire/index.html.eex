@@ -1,6 +1,6 @@
   <%= for wire <- @wires do %>
 	  <article>
-	  	<h2><a href="<%= wire.link %>"><%= wire.title %></a></h2>
+	  	<h2 class="p"><a href="<%= wire.link %>"><%= wire.title %></a></h2>
 	  	<p><%= wire.context %></p>
 	  	<p><%= wire.user_id %></p>
 	  </article>

@@ -4,10 +4,15 @@
  *
  */
 
+p, .p {
+  font-size: inherit;
+  margin: 0;
+}
+
 h1, .h1,
 h2, .h2,
 h3, .h3 {
-
+  font-weight: bold;
 }
 
 h1, .h1 {
