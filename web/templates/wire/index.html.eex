@@ -1,9 +1,9 @@
   <%= for wire <- @wires do %>
 	  <article>
 	  	<h2 class="p"><a href="<%= wire.link %>"><%= wire.title %></a></h2>
-	  	<p><%= wire.link %></p>
+	  	<p><%= simple_url wire.link %></p>
 	  	<p><%= wire.context %></p>
-	  	<p><%= wire.user.username %></p>
+	  	<a href ="<%= user_path(@conn, :show, wire.user.id) %>"><%= wire.user.username %></a>
 	  	<p><%= simple_time wire.inserted_at %></p>
 	  </article>
   <% end %>

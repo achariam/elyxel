@@ -29,4 +29,9 @@ defmodule Elyxel.WireView do
   			"#{ round(elapsed / 60.0 / 60.0 / 24.0 / 365.0) }y"
   	end
   end
+
+  def simple_url(url) do
+   parsed = url |> URI.parse
+   parsed.host
+  end
 end
