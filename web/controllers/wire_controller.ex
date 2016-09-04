@@ -7,7 +7,7 @@ defmodule Elyxel.WireController do
 	def action(conn, _), do: auth_action_role conn, ["admin", "user"], __MODULE__
 
 	def index(conn, _params, _user) do
-	  wires = Repo.all(Wire)
+	  wires = Wire |> Repo.all |> Repo.preload([:user])
 	  render(conn, "index.html", wires: wires)
 	end
 end
