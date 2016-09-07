@@ -1,4 +1,4 @@
-  <%= for wire <- @wires do %>
+  <%= for wire <- @wires.list do %>
 	  <article>
 	  	<h2 class="p"><a href="<%= wire.link %>"><%= wire.title %></a></h2>
 	  	<p><%= simple_url wire.link %></p>
@@ -7,4 +7,8 @@
 	  	<p><%= simple_time wire.inserted_at %></p>
 	  </article>
   <% end %>
+  <%= if @wires[:has_next?] do %>
+  	<a href=" wire_path(@conn, :index, :page)">>></a>
+  <%= end %>
+
 
