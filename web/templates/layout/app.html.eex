@@ -12,16 +12,13 @@
     <header class="structure">
       <nav>
         <ul class="nav">
-          <li><%= link "Top", to: wire_path(@conn, :index)%></li>
-          <li>Recent</li>
+          <li><%= link "Top", to: wire_path(@conn, :top)%></li>
+          <li><%= link "Recent", to: wire_path(@conn, :recent)%></li>
         </ul>
       </nav>
 
       <nav>
         <ul class="nav">
-          <%= if @current_user.role == "admin" do %>
-          <li><%= link "Admin", to: admin_path(@conn, :index)%></li>
-          <%= end %>
           <li><a href="<%= user_path(@conn, :show, @current_user.id) %>"><%= @current_user.username %></a></li>
           <li><%= link "Logout", to: logout_path(@conn, :logout), method: :delete %></li>
         </ul>

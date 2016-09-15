@@ -8,7 +8,7 @@
 	  </article>
   <% end %>
   <%= if @wires[:has_next?] do %>
-  	<a href="<%= wire_path(@conn, :index, p: next_page @wires.current_page) %>">>></a>
+  	<a href="<%= wire_path(@conn, :top, p: next_page @wires.current_page) %>">>></a>
   <%= end %>
 
 

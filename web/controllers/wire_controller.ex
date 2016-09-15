@@ -8,21 +8,39 @@ defmodule Elyxel.WireController do
 
 	def action(conn, _), do: auth_action_role conn, ["admin", "user"], __MODULE__
 
-	def index(conn, %{"p" => page}, _user) do
+	def top(conn, %{"p" => page}, _user) do
+	  wires =
+	  	Wire
+	  	|> order_by(desc: :pluses)
+	  	|> preload([:user])
+	  	|> page(page: page, per_page: 5)
+	  render(conn, "top.html", wires: wires)
+	end
+
+	def top(conn, _params, _user) do
+	  wires =
+	  	Wire
+	  	|> order_by(desc: :pluses)
+	  	|> preload([:user])
+	  	|> page(page: 0, per_page: 5)
+	  render(conn, "top.html", wires: wires)
+	end
+
+	def recent(conn, %{"p" => page}, _user) do
 	  wires =
 	  	Wire
 	  	|> order_by(desc: :inserted_at)
 	  	|> preload([:user])
 	  	|> page(page: page, per_page: 5)
-	  render(conn, "index.html", wires: wires)
+	  render(conn, "recent.html", wires: wires)
 	end
 
-	def index(conn, _params, _user) do
+	def recent(conn, _params, _user) do
 	  wires =
 	  	Wire
 	  	|> order_by(desc: :inserted_at)
 	  	|> preload([:user])
 	  	|> page(page: 0, per_page: 5)
-	  render(conn, "index.html", wires: wires)
+	  render(conn, "recent.html", wires: wires)
 	end
 end

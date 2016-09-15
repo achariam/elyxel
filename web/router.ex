@@ -25,6 +25,9 @@ defmodule Elyxel.Router do
 
     get "/signup", RegistrationController, :signup
     post "/signup", RegistrationController, :create
+
+    get "/top", WireController, :top
+    get "/recent", WireController, :recent
   end
 
   scope "/users", Elyxel do
@@ -40,11 +43,4 @@ defmodule Elyxel.Router do
     resources "/users", AdminController, only: [:new, :create, :delete]
     resources "/invites", InviteController, only: [:new, :create, :delete]
   end
-
-  scope "/top", Elyxel do
-    pipe_through :browser
-
-    get "/", WireController, :index
-  end
-
 end

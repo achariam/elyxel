@@ -1,0 +1,15 @@
+  <%= for wire <- @wires.list do %>
+	  <article>
+	  	<h2 class="p"><a href="<%= wire.link %>"><%= wire.title %></a></h2>
+	  	<p><%= simple_url wire.link %></p>
+	  	<p><%= wire.context %></p>
+	  	<a href ="<%= user_path(@conn, :show, wire.user.id) %>"><%= wire.user.username %></a>
+	  	<p><%= simple_time wire.inserted_at %></p>
+	  </article>
+  <% end %>
+  <%= if @wires[:has_next?] do %>
+  	<a href="<%= wire_path(@conn, :recent, p: next_page @wires.current_page) %>">>></a>
+  <%= end %>
+
+
+
