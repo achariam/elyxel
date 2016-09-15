@@ -34,4 +34,8 @@ defmodule Elyxel.WireView do
    parsed = url |> URI.parse
    parsed.host
   end
+
+  def next_page(page) do
+    page + 1
+  end
 end

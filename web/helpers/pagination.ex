@@ -14,6 +14,7 @@ defmodule Elyxel.Pagination do
               |> Repo.all
     %{ has_next?: (length(result) == count),
        has_prev?: scrub_page > 0,
+       current_page: scrub_page,
        list: Enum.slice(result, 0, count-1) }
   end
 

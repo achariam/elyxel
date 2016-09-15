@@ -14,7 +14,7 @@ defmodule Elyxel.WireController do
 	  	|> order_by(desc: :inserted_at)
 	  	|> preload([:user])
 	  	|> page(page: page, per_page: 5)
-	  render(conn, "index.html", wires: wires, page_number: page)
+	  render(conn, "index.html", wires: wires)
 	end
 
 	def index(conn, _params, _user) do
@@ -23,6 +23,6 @@ defmodule Elyxel.WireController do
 	  	|> order_by(desc: :inserted_at)
 	  	|> preload([:user])
 	  	|> page(page: 0, per_page: 5)
-	  render(conn, "index.html", wires: wires, page_number: 0)
+	  render(conn, "index.html", wires: wires)
 	end
 end
