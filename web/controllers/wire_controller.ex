@@ -43,4 +43,22 @@ defmodule Elyxel.WireController do
 	  	|> page(page: 0, per_page: 5)
 	  render(conn, "recent.html", wires: wires)
 	end
+
+	def submit(conn, params, user) do
+		changeset = Wire.changeset(%Wire{}, params)
+		render conn, "submit.html", changeset: changeset
+	end
+
+	def create(conn, %{"wire" => wire}, user) do
+		changeset = Wire.changeset(%Wire{}, wire)
+
+		case Repo.insert(changeset) do
+		  {:ok, _user} ->
+		    conn
+		    |> put_flash(:info, "Wire created successfully.")
+		    |> redirect(to: wire_path(conn, :recent))
+		  {:error, changeset} ->
+		    render(conn, "submit.html", changeset: changeset)
+		end
+	end
 end

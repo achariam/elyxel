@@ -28,6 +28,8 @@ defmodule Elyxel.Router do
 
     get "/top", WireController, :top
     get "/recent", WireController, :recent
+    get "/submit", WireController, :submit
+    post "/submit", WireController, :create
   end
 
   scope "/users", Elyxel do

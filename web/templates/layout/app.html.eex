@@ -14,6 +14,7 @@
         <ul class="nav">
           <li><%= link "Top", to: wire_path(@conn, :top)%></li>
           <li><%= link "Recent", to: wire_path(@conn, :recent)%></li>
+          <li><%= link "Submit", to: wire_path(@conn, :submit)%></li>
         </ul>
       </nav>
 
