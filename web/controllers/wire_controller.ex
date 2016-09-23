@@ -44,13 +44,15 @@ defmodule Elyxel.WireController do
 	  render(conn, "recent.html", wires: wires)
 	end
 
-	def submit(conn, params, user) do
-		changeset = Wire.changeset(%Wire{}, params)
+	def submit(conn, _params, _user) do
+		changeset = Wire.changeset(%Wire{})
 		render conn, "submit.html", changeset: changeset
 	end
 
 	def create(conn, %{"wire" => wire}, user) do
-		changeset = Wire.changeset(%Wire{}, wire)
+		changeset = user
+			|> build_assoc(:wires)
+			|> Wire.changeset(wire)
 
 		case Repo.insert(changeset) do
 		  {:ok, _user} ->
