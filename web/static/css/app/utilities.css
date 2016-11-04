@@ -12,3 +12,7 @@
 	padding-left: var(--baseline);
   padding-right: var(--baseline);
 }
+
+.pad-b {
+	padding-bottom: var(--baseline);
+}

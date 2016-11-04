@@ -31,4 +31,5 @@ header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	border-top: 2px solid var(--midnight-color);
 }

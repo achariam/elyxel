@@ -9,7 +9,7 @@
   <!-- icons -->
 
   <body class="pad-l-r">
-    <header class="structure">
+    <header class="structure pad-b">
       <nav>
         <ul class="nav">
           <li><%= link "Top", to: wire_path(@conn, :top)%></li>

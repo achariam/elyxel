@@ -1,0 +1,10 @@
+<article>
+	<a href="<%= @wire.link %>">
+		<h2 class="p"><%= @wire.title %></h2>
+		<p><%= simple_url @wire.link %></p>
+	</a>
+
+	<p><%= @wire.context %></p>
+	<a href ="<%= user_path(@conn, :show, @wire.user.id) %>"><%= @wire.user.username %></a>
+	<p><%= simple_time @wire.inserted_at %></p>
+</article>
