@@ -8,3 +8,8 @@
 	font-size: .9rem;
 	font-weight: normal;
 }
+
+.action-bar {
+	display: flex;
+	justify-content: space-between;
+}

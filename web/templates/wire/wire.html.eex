@@ -7,6 +7,12 @@
 	</a>
 
 	<p><%= @wire.context %></p>
-	<a href ="<%= user_path(@conn, :show, @wire.user.id) %>"><%= @wire.user.username %></a>
-	<p><%= simple_time @wire.inserted_at %></p>
+
+	<div class="action-bar">
+		<p>
+			<a href ="<%= user_path(@conn, :show, @wire.user.id) %>"><%= @wire.user.username %></a>
+			&middot;
+			<%= simple_time @wire.inserted_at %>
+		</p>
+	</div>
 </article>
