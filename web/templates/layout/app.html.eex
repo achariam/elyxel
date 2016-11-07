@@ -21,7 +21,7 @@
       <nav>
         <ul class="nav">
           <li><a href="<%= user_path(@conn, :show, @current_user.id) %>"><%= @current_user.username %></a></li>
-          <li><%= link "Logout", to: logout_path(@conn, :logout), method: :delete %></li>
+          <li><%= link "Sign Out", to: logout_path(@conn, :logout), method: :delete %></li>
         </ul>
       </nav>
     </header>

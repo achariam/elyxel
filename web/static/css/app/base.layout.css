@@ -23,7 +23,6 @@
 }
 
 article + article {
-	margin-top: 1rem;
 	border-top: 1px solid var(--smoke-color);
 }
 

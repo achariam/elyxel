@@ -1,7 +1,9 @@
 <article>
 	<a href="<%= @wire.link %>">
-		<h2 class="p"><%= @wire.title %></h2>
-		<p><%= simple_url @wire.link %></p>
+		<h2>
+			<%= @wire.title %>
+			<span class="source-url">(<%= simple_url @wire.link %>)</span>
+		</h2>
 	</a>
 
 	<p><%= @wire.context %></p>
