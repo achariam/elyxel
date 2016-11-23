@@ -9,6 +9,9 @@
 	<p><%= @wire.context %></p>
 
 	<div class="action-bar">
+		<%= button "plus", to: wire_path(@conn, :plus, @wire.id), method: :post %>
+		<%= length(@wire.pluses) %>
+		<a href="<%= wire_path(@conn, :show, @wire.id) %>" class="comment">comments</a>
 		<p>
 			<a href ="<%= user_path(@conn, :show, @wire.user.id) %>"><%= @wire.user.username %></a>
 			&middot;

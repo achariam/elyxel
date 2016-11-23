@@ -5,6 +5,7 @@ defmodule Elyxel.WireController do
   import Elyxel.Pagination
   import Ecto.Query
   alias Elyxel.Wire
+  alias Elyxel.Plus
 
 	def action(conn, _), do: auth_action_role conn, ["admin", "user"], __MODULE__
 
@@ -12,7 +13,7 @@ defmodule Elyxel.WireController do
 	  wires =
 	  	Wire
 	  	|> order_by(desc: :rating)
-	  	|> preload([:user])
+	  	|> preload([:user, :pluses])
 	  	|> page(page: page, per_page: 10)
 	  render(conn, "top.html", wires: wires)
 	end
@@ -21,7 +22,7 @@ defmodule Elyxel.WireController do
 	  wires =
 	  	Wire
 	  	|> order_by(desc: :rating)
-	  	|> preload([:user])
+	  	|> preload([:user, :pluses])
 	  	|> page(page: 0, per_page: 10)
 	  render(conn, "top.html", wires: wires)
 	end
@@ -30,7 +31,7 @@ defmodule Elyxel.WireController do
 	  wires =
 	  	Wire
 	  	|> order_by(desc: :inserted_at)
-	  	|> preload([:user])
+	  	|> preload([:user, :pluses])
 	  	|> page(page: page, per_page: 10)
 	  render(conn, "recent.html", wires: wires)
 	end
@@ -39,7 +40,7 @@ defmodule Elyxel.WireController do
 	  wires =
 	  	Wire
 	  	|> order_by(desc: :inserted_at)
-	  	|> preload([:user])
+	  	|> preload([:user, :pluses])
 	  	|> page(page: 0, per_page: 10)
 	  render(conn, "recent.html", wires: wires)
 	end
@@ -61,6 +62,28 @@ defmodule Elyxel.WireController do
 		    |> redirect(to: wire_path(conn, :recent))
 		  {:error, changeset} ->
 		    render(conn, "submit.html", changeset: changeset)
+		end
+	end
+
+	def show(conn, %{"id" => id}, _user) do
+	  wire = Wire |> Repo.get!(id) |> Repo.preload([:user, :pluses])
+	  render(conn, "detail.html", wire: wire)
+	end
+
+	def plus(conn, %{"id" => id}, user) do
+		wire = Wire |> Repo.get!(id)
+		user_assoc = build_assoc(user, :pluses, %Plus{})
+		changeset = build_assoc(wire, :pluses, user_assoc)
+
+		case Repo.insert(changeset) do
+			{:ok, _user} ->
+				conn
+				|> put_flash(:info, "Hooyah")
+				|> redirect(to: wire_path(conn, :top))
+			{:error, changeset} ->
+				conn
+				|> put_flash(:info, "Booooo")
+				|> redirect(to: wire_path(conn, :top))
 		end
 	end
 end
