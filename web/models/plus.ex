@@ -15,5 +15,8 @@ defmodule Elyxel.Plus do
     struct
     |> cast(params, [])
     |> validate_required([])
+    |> foreign_key_constraint(:user_id)
+    |> foreign_key_constraint(:wire_id)
+    |> unique_constraint(:user_id_wire_id)
   end
 end
