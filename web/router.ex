@@ -8,6 +8,7 @@ defmodule Elyxel.Router do
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug Openmaize.Authenticate, db_module: Elyxel.OpenmaizeEcto
+    plug NavigationHistory.Tracker
   end
 
   scope "/", Elyxel do

@@ -78,12 +78,10 @@ defmodule Elyxel.WireController do
 		case Repo.insert(changeset) do
 			{:ok, _user} ->
 				conn
-				|> put_flash(:info, "Hooyah")
-				|> redirect(to: wire_path(conn, :top))
+				|> redirect(to: NavigationHistory.last_path(conn, default: "/"))
 			{:error, changeset} ->
 				conn
-				|> put_flash(:info, "Booooo")
-				|> redirect(to: wire_path(conn, :top))
+				|> redirect(to: NavigationHistory.last_path(conn, default: "/"))
 		end
 	end
 end

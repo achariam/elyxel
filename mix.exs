@@ -41,7 +41,8 @@ defmodule Elyxel.Mixfile do
      {:exrm, "~> 1.0.5"},
      {:openmaize, "~> 2.0"},
      {:mailgun, "~> 0.1.2"},
-     {:not_qwerty123, "~> 1.2"}]
+     {:not_qwerty123, "~> 1.2"},
+     {:navigation_history, "~> 0.2.0"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
