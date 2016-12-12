@@ -9,7 +9,7 @@
   <!-- icons -->
 
   <body class="pad-l-r">
-    <header class="structure pad-b">
+    <header class="structure pad-tb">
       <nav>
         <ul class="nav">
           <li><%= link "Top", to: wire_path(@conn, :top)%></li>
@@ -29,10 +29,6 @@
     <main class="structure">
       <%= render @view_module, @view_template, assigns %>
     </main>
-
-    <footer class="structure">
-      <%= render Elyxel.LayoutView, "footer.html" %>
-    </footer>
 
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <script>require("web/static/js/app")</script>

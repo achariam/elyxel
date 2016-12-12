@@ -9,10 +9,13 @@
 }
 
 .pad-l-r {
-	padding-left: var(--baseline);
-  padding-right: var(--baseline);
+  padding: 0 var(--baseline);
 }
 
 .pad-b {
 	padding-bottom: var(--baseline);
+}
+
+.pad-tb {
+  padding: var(--baseline) 0;
 }

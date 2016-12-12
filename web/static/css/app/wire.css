@@ -5,7 +5,6 @@
  */
 
 .source-url {
-	font-size: .9rem;
 	font-weight: normal;
 }
 
@@ -16,6 +15,10 @@
 
 .action-bar input[type="submit"] {
   display: none;
+}
+
+.context {
+  padding-bottom: calc( var(--baseline) / 4 );
 }
 
 .controls > * {

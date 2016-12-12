@@ -10,7 +10,6 @@ html {
   font-family: var(--system-fonts);
   color: var(--text-color);
   background-color: #fff;
-
   -webkit-text-size-adjust: 100%;
 }
 

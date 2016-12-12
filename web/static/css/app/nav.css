@@ -17,3 +17,8 @@
 .nav li + li {
  margin-left: calc( var(--baseline) / 2 );
 }
+
+.next {
+  stroke: var(--text-color);
+  float: right;
+}
