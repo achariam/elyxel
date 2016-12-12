@@ -29,12 +29,6 @@ h3, .h3 {
   padding-top: var(--baseline);
 }
 
-h3, .h3 {
-}
-
-h4, .h4 {
-}
-
 a {
   text-decoration: none;
   color: inherit;
@@ -42,4 +36,8 @@ a {
 
 a:hover, a:focus {
   color: var(--site-color);
+}
+
+.small {
+  font-size: .9rem;
 }

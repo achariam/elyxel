@@ -9,9 +9,31 @@
 	<p><%= @wire.context %></p>
 
 	<div class="action-bar">
-		<%= button "plus", to: wire_path(@conn, :plus, @wire.id), method: :post %>
-		<%= length(@wire.pluses) %>
-		<a href="<%= wire_path(@conn, :show, @wire.id) %>" class="comment">comments</a>
+		<div class="controls">
+			<form action="<%= wire_path(@conn, :plus, @wire.id) %>" method="post">
+				<input type="hidden" name="_csrf_token" value="<%= get_csrf_token %>">
+				<label class="plus">
+					<input type="submit" value="plus">
+					<svg class="lightning" width="12" height="18" viewBox="3 0 12 18" xmlns="http://www.w3.org/2000/svg">
+					  <path d="M4.63 9.3c-.55 0-.7-.34-.35-.77l5.98-7.16c.36-.43.58-.34.5.2l-.9 5.7c-.08.53.3.97.85.97h2.68c.55 0 .7.34.35.77l-6.2 7.3c-.36.45-.57.35-.47-.2l1.07-5.8c.1-.54-.27-1-.82-1H4.64z" stroke-width="1.2" fill="none"/>
+					</svg>
+					<span class="small"><%= length(@wire.pluses) %></span>
+				</label>
+			</form>
+
+			<a href="<%= wire_path(@conn, :show, @wire.id) %>" class="comment">
+				<svg class="bubble" width="18" height="14" viewBox="0 2 18 14" xmlns="http://www.w3.org/2000/svg">
+				  <g fill="none" fill-rule="evenodd" transform="translate(1 3)">
+				    <path d="M13.05 1.02c1.08.23 2.26 1.26 2.57 2.32 0 0 .38.42.38 2.74 0 2.3-.38 2.76-.38 2.76-.34 1.03-1.5 2.08-2.57 2.3 0 0-.95.3-3.04.43-.55.04-3.4.04-4 0-2.1-.13-3.03-.43-3.03-.43C1.87 10.9.7 9.87.37 8.8c0 0-.37-.4-.37-2.72 0-2.32.38-2.76.38-2.76.34-1.04 1.5-2.1 2.57-2.3C2.95 1.02 4.5.5 8 .5s5.05.52 5.05.52z" stroke-width="1.3"/>
+				    <ellipse class="bubble-dot" stroke-width=".1" cx="4" cy="6" rx="1" ry="1"/>
+				    <ellipse class="bubble-dot" stroke-width=".1" cx="8" cy="6" rx="1" ry="1"/>
+				    <ellipse class="bubble-dot" stroke-width=".1" cx="12" cy="6" rx="1" ry="1"/>
+				  </g>
+				</svg>
+				<span class="small">232</span>
+			</a>
+		</div>
+
 		<p>
 			<a href ="<%= user_path(@conn, :show, @wire.user.id) %>"><%= @wire.user.username %></a>
 			&middot;
