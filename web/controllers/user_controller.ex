@@ -3,7 +3,6 @@ defmodule Elyxel.UserController do
 
   import Elyxel.Authorize
   alias Elyxel.User
-  alias Elyxel.Wire
 
   plug :scrub_params, "user" when action in [:create, :update]
   plug :id_check when action in [:show, :edit, :update]

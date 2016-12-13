@@ -19,7 +19,7 @@ defmodule Elyxel.Mixfile do
   def application do
     [mod: {Elyxel, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :openmaize, :mailgun, :not_qwerty123]]
+                    :phoenix_ecto, :postgrex, :openmaize, :mailgun, :not_qwerty123, :navigation_history]]
   end
 
   # Specifies which paths to compile per environment.
