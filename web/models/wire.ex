@@ -5,10 +5,10 @@ defmodule Elyxel.Wire do
     field :title, :string
     field :link, :string
     field :context, :string
-    field :pluses, :integer
-    field :minuses, :integer
+    field :rating, :integer
     belongs_to :user, Elyxel.User, foreign_key: :user_id
 
+    has_many :pluses, Elyxel.Plus
     timestamps
   end
 

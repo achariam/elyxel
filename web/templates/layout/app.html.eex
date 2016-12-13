@@ -1,50 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <title>Elyxel</title>
+  <meta name="viewport" content="initial-scale=1" />
+  <meta name="author" content="Elyxel">
 
-    <title>Elyxel</title>
-    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
-  </head>
+  <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  <!-- icons -->
 
-  <body>
-    <div class="wrapper">
-      <div class="header">
-        <nav>
-          <ul>
-            <li><a href="<%= page_path @conn, :index %>">Home</a></li>
-            <li><a href="<%= user_path @conn, :index %>">Users</a></li>
-            <li><a href="<%= admin_path @conn, :index %>">Admin</a></li>
-              <%= if @current_user do %>
-              <li><a href="<%= user_path(@conn, :show, @current_user.id) %>"><%= @current_user.username %></a></li>
-              <li><%= link "Logout", to: logout_path(@conn, :logout), method: :delete %></li>
-              <%= else %>
-              <li><a href="<%= login_path @conn, :login %>">Login</a></li>
-              <%= end %>
-          </ul>
-        </nav>
-      </div>
+  <body class="pad-l-r">
+    <header class="structure pad-tb">
+      <nav>
+        <ul class="nav">
+          <li><%= link "Top", to: wire_path(@conn, :top)%></li>
+          <li><%= link "Recent", to: wire_path(@conn, :recent)%></li>
+          <li><%= link "Submit", to: wire_path(@conn, :submit)%></li>
+        </ul>
+      </nav>
 
-      <div class="container">
-        <p class="alert alert-info"><%= get_flash(@conn, :info) %></p>
-        <p class="alert alert-error"><%= get_flash(@conn, :error) %></p>
-      </div>
+      <nav>
+        <ul class="nav">
+          <li><a href="<%= user_path(@conn, :show, @current_user.id) %>"><%= @current_user.username %></a></li>
+          <li><%= link "Sign Out", to: logout_path(@conn, :logout), method: :delete %></li>
+        </ul>
+      </nav>
+    </header>
 
-      <div class="section">
-        <%= render @view_module, @view_template, assigns %>
-      </div>
-      <div class="push"></div>
-    </div>
-    </div>
-    <div class="push"></div>
-    </div>
-
-    <footer>
-      <%= render Elyxel.LayoutView, "footer.html" %>
-    </footer>
+    <main class="structure">
+      <%= render @view_module, @view_template, assigns %>
+    </main>
 
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <script>require("web/static/js/app")</script>

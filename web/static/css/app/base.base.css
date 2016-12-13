@@ -2,28 +2,19 @@
  * Base Styles
  * ===========
  *
- * Base CSS styles for common HTML elements
- *
  */
 
 html {
-  font-size: 112.5%;
-  line-height: 1.7778;
+  font-size: 81.3%;
+  line-height: var(--baseline);
   font-family: var(--system-fonts);
   color: var(--text-color);
   background-color: #fff;
-
-  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
 }
 
-  @media (max-width: 40rem) {
-    html {
-      font-size: 100%;
-    }
-  }
+@media (max-width: 40rem) {
+}
 
-  @media (max-width: 30rem) {
-    html {
-      font-size: 87.5%;
-    }
-  }
+@media (max-width: 30rem) {
+}

@@ -5,10 +5,15 @@
  */
 
 :root {
-  --baseline: 1.7778rem;
-
   --text-color: #434648;
+  --slate-color: #949494;
+  --smoke-color: #E4E4E4;
+  --midnight-color: #0D2434;
+  --white-color: #FFFFFF;
+  --salmon-color: #EA4C50;
+  --lightning-color: #FFC745;
 
+  --baseline: 1.5rem;
   --system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI",
   								Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
   								"Helvetica Neue", sans-serif;

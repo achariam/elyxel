@@ -1,0 +1,25 @@
+<div class="form-wrap">
+    <%= form_for @changeset, wire_path(@conn, :create), fn f -> %>
+      <ul class="notifications">
+        <%= if get_flash(@conn, :info) do %>
+          <li role="alert"><%= get_flash(@conn, :info) %></li>
+        <% end %>
+        <%= if get_flash(@conn, :error) do %>
+          <li role="alert"><%= get_flash(@conn, :error) %></li>
+        <% end %>
+        <%= if f.errors != [] do %>
+          <%= for {attr, message} <- f.errors do %>
+            <li role="alert"><%= humanize(attr) %> : <%= translate_error(message) %></li>
+          <% end %>
+        <% end %>
+      </ul>
+
+      <%= text_input f, :title, placeholder: "Title" %>
+      <%= text_input f, :link, placeholder: "URL" %>
+      <%= text_input f, :context, placeholder: "Description" %>
+
+      <div class="form-controls">
+        <%= submit "Submit" %>
+      </div>
+    <% end %>
+</div>

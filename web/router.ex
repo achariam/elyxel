@@ -8,6 +8,7 @@ defmodule Elyxel.Router do
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug Openmaize.Authenticate, db_module: Elyxel.OpenmaizeEcto
+    plug NavigationHistory.Tracker
   end
 
   scope "/", Elyxel do
@@ -25,6 +26,18 @@ defmodule Elyxel.Router do
 
     get "/signup", RegistrationController, :signup
     post "/signup", RegistrationController, :create
+
+    get "/top", WireController, :top
+    get "/recent", WireController, :recent
+    get "/submit", WireController, :submit
+    post "/submit", WireController, :create
+    post "/plus/:id", WireController, :plus
+  end
+
+  scope "/wires", Elyxel do
+    pipe_through :browser
+
+    resources "/", WireController, only: [:show]
   end
 
   scope "/users", Elyxel do
@@ -40,11 +53,4 @@ defmodule Elyxel.Router do
     resources "/users", AdminController, only: [:new, :create, :delete]
     resources "/invites", InviteController, only: [:new, :create, :delete]
   end
-
-  scope "/top", Elyxel do
-    pipe_through :browser
-
-    get "/", WireController, :index
-  end
-
 end

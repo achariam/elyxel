@@ -1,0 +1,53 @@
+/*
+ * Wire
+ * ====
+ *
+ */
+
+.source-url {
+	font-weight: normal;
+}
+
+.action-bar {
+	display: flex;
+	justify-content: space-between;
+}
+
+.action-bar input[type="submit"] {
+  display: none;
+}
+
+.context {
+  padding-bottom: calc( var(--baseline) / 4 );
+}
+
+.controls > * {
+  display: inline-block;
+  padding-right: calc( var(--baseline) / 4 );
+}
+
+.bubble,
+.lightning {
+  stroke: var(--text-color);
+  position: relative;
+}
+
+.bubble {
+  top: .2rem;
+}
+
+.lightning {
+  top: .4rem;
+}
+
+.bubble-dot {
+  fill: var(--text-color);
+}
+
+.plus {
+  cursor: pointer;
+}
+
+.plus:hover .lightning {
+  stroke: var(--lightning-color);
+}
