@@ -6,6 +6,7 @@ defmodule Elyxel.WireController do
   import Ecto.Query
   alias Elyxel.Wire
   alias Elyxel.Plus
+  alias Elyxel.Repo
 
 	def action(conn, _), do: auth_action_role conn, ["admin", "user"], __MODULE__
 
@@ -83,5 +84,14 @@ defmodule Elyxel.WireController do
 				conn
 				|> redirect(to: NavigationHistory.last_path(conn, default: "/"))
 		end
+	end
+
+	def zero(conn, %{"id" => id}, user) do
+    plus = Repo.get_by(Plus, wire_id: id, user_id: user.id)
+    Repo.delete(plus)
+
+	  conn
+	  |> put_flash(:info, "Wire zeroed out.")
+	  |> redirect(to: NavigationHistory.last_path(conn, default: "/"))
 	end
 end

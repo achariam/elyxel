@@ -32,6 +32,7 @@ defmodule Elyxel.Router do
     get "/submit", WireController, :submit
     post "/submit", WireController, :create
     post "/plus/:id", WireController, :plus
+    delete "/zero/:id", WireController, :zero
   end
 
   scope "/wires", Elyxel do

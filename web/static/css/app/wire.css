@@ -32,12 +32,16 @@
   position: relative;
 }
 
-.bubble {
-  top: .2rem;
-}
-
 .lightning {
   top: .4rem;
+}
+
+.strike {
+  fill: var(--lightning-color);
+}
+
+.bubble {
+  top: .2rem;
 }
 
 .bubble-dot {
