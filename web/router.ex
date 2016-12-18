@@ -31,14 +31,17 @@ defmodule Elyxel.Router do
     get "/recent", WireController, :recent
     get "/submit", WireController, :submit
     post "/submit", WireController, :create
-    post "/plus/:id", WireController, :plus
-    delete "/zero/:id", WireController, :zero
+
   end
 
   scope "/wires", Elyxel do
     pipe_through :browser
 
-    resources "/", WireController, only: [:show]
+    resources "/", WireController, only: [:show] do
+      post "/plus", WireController, :plus
+      delete "/zero", WireController, :zero
+      post "/comment", WireController, :comment
+    end
   end
 
   scope "/users", Elyxel do

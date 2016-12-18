@@ -7,6 +7,10 @@ defmodule Elyxel.WireController do
   alias Elyxel.Wire
   alias Elyxel.Plus
   alias Elyxel.Repo
+  alias Elyxel.Comment
+
+  plug :scrub_params, "wire" when action in [:create]
+  plug :scrub_params, "comment" when action in [:comment]
 
 	def action(conn, _), do: auth_action_role conn, ["admin", "user"], __MODULE__
 
@@ -55,6 +59,7 @@ defmodule Elyxel.WireController do
 		changeset = user
 			|> build_assoc(:wires)
 			|> Wire.changeset(wire)
+			|> Ecto.Changeset.put_change(:rating, 0)
 
 		case Repo.insert(changeset) do
 		  {:ok, _user} ->
@@ -67,12 +72,28 @@ defmodule Elyxel.WireController do
 	end
 
 	def show(conn, %{"id" => id}, _user) do
-	  wire = Wire |> Repo.get!(id) |> Repo.preload([:user, :pluses])
-	  render(conn, "detail.html", wire: wire)
+	  wire = Wire |> Repo.get!(id) |> Repo.preload([:user, :pluses, :comments])
+	  changeset = Comment.changeset(%Comment{})
+	  render(conn, "detail.html", wire: wire, changeset: changeset)
 	end
 
-	def plus(conn, %{"id" => id}, user) do
-		wire = Wire |> Repo.get!(id)
+	def comment(conn, %{"comment" => %{"content" => content}, "wire_id" => wire_id}, user) do
+		wire = Wire |> Repo.get!(wire_id) |> Repo.preload([:user, :pluses, :comments])
+
+		changeset = Comment.changeset(%Comment{}, %{"content" => content, "user_id" => user.id, "wire_id" => wire_id})
+
+		case Repo.insert(changeset) do
+		  {:ok, _user} ->
+		  	conn
+		  	|> put_flash(:info, "Comment added.")
+		  	|> redirect(to: NavigationHistory.last_path(conn, default: "/"))
+		  {:error, changeset} ->
+		    render(conn, "detail.html", wire: wire, changeset: changeset)
+		end
+	end
+
+	def plus(conn, %{"wire_id" => wire_id}, user) do
+		wire = Wire |> Repo.get!(wire_id)
 		user_assoc = build_assoc(user, :pluses, %Plus{})
 		changeset = build_assoc(wire, :pluses, user_assoc)
 
@@ -86,8 +107,8 @@ defmodule Elyxel.WireController do
 		end
 	end
 
-	def zero(conn, %{"id" => id}, user) do
-    plus = Repo.get_by(Plus, wire_id: id, user_id: user.id)
+	def zero(conn, %{"wire_id" => wire_id}, user) do
+    plus = Repo.get_by(Plus, wire_id: wire_id, user_id: user.id)
     Repo.delete(plus)
 
 	  conn

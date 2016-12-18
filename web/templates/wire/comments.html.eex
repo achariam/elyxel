@@ -1,0 +1,16 @@
+<h3> Comments: </h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for comment <- @wire.comments do %>
+    <tr>
+      <td><%= comment.content %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>

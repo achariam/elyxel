@@ -9,6 +9,7 @@ defmodule Elyxel.Wire do
     belongs_to :user, Elyxel.User, foreign_key: :user_id
 
     has_many :pluses, Elyxel.Plus
+    has_many :comments, Elyxel.Comment
     timestamps
   end
 

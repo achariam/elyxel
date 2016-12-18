@@ -11,7 +11,7 @@
 	<div class="action-bar">
 		<div class="controls">
 			<%= if lightning_state(@wire.user.id, @wire.id) do %>
-				<form action="<%= wire_path(@conn, :plus, @wire.id) %>" method="post">
+				<form action="<%= wire_wire_path(@conn, :plus, @wire.id) %>" method="post">
 					<input type="hidden" name="_csrf_token" value="<%= get_csrf_token %>">
 					<label class="plus">
 						<input type="submit" value="plus">
@@ -22,7 +22,7 @@
 					</label>
 				</form>
 			<%= else %>
-				<form action="<%= wire_path(@conn, :zero, @wire.id) %>" method="post">
+				<form action="<%= wire_wire_path(@conn, :zero, @wire.id) %>" method="post">
 					<input name="_method" type="hidden" value="delete">
 					<input type="hidden" name="_csrf_token" value="<%= get_csrf_token %>">
 					<label class="plus">

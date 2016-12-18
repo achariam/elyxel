@@ -18,6 +18,7 @@ defmodule Elyxel.User do
 
     has_many :wires, Elyxel.Wire
     has_many :pluses, Elyxel.Plus
+    has_many :comments, Elyxel.Comment
     timestamps
   end
 
