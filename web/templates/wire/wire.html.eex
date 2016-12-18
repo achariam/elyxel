@@ -44,7 +44,7 @@
 				    <ellipse class="bubble-dot" stroke-width=".1" cx="12" cy="6" rx="1" ry="1"/>
 				  </g>
 				</svg>
-				<span class="small">0</span>
+				<span class="small"><%= length(@wire.comments) %></span>
 			</a>
 		</div>
 

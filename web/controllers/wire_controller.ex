@@ -18,7 +18,7 @@ defmodule Elyxel.WireController do
 	  wires =
 	  	Wire
 	  	|> order_by(desc: :rating)
-	  	|> preload([:user, :pluses])
+	  	|> preload([:user, :pluses, :comments])
 	  	|> page(page: page, per_page: 10)
 	  render(conn, "top.html", wires: wires)
 	end
@@ -27,7 +27,7 @@ defmodule Elyxel.WireController do
 	  wires =
 	  	Wire
 	  	|> order_by(desc: :rating)
-	  	|> preload([:user, :pluses])
+	  	|> preload([:user, :pluses, :comments])
 	  	|> page(page: 0, per_page: 10)
 	  render(conn, "top.html", wires: wires)
 	end
@@ -36,7 +36,7 @@ defmodule Elyxel.WireController do
 	  wires =
 	  	Wire
 	  	|> order_by(desc: :inserted_at)
-	  	|> preload([:user, :pluses])
+	  	|> preload([:user, :pluses, :comments])
 	  	|> page(page: page, per_page: 10)
 	  render(conn, "recent.html", wires: wires)
 	end
@@ -45,7 +45,7 @@ defmodule Elyxel.WireController do
 	  wires =
 	  	Wire
 	  	|> order_by(desc: :inserted_at)
-	  	|> preload([:user, :pluses])
+	  	|> preload([:user, :pluses, :comments])
 	  	|> page(page: 0, per_page: 10)
 	  render(conn, "recent.html", wires: wires)
 	end
