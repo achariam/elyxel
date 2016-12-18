@@ -39,4 +39,10 @@ defmodule Elyxel.WireView do
   def next_page(page) do
     page + 1
   end
+
+  def markdown(content) do
+    content
+    |> Earmark.to_html
+    |> raw
+  end
 end

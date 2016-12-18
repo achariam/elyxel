@@ -9,7 +9,7 @@
   <tbody>
 <%= for comment <- @wire.comments do %>
     <tr>
-      <td><%= comment.content %></td>
+      <td><%= markdown(comment.content) %></td>
     </tr>
 <% end %>
   </tbody>
