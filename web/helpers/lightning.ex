@@ -15,8 +15,8 @@ defmodule Elyxel.Lightning do
     |> Repo.all
 
     case length(query) do
-      1 -> false
-      0 -> true
+      1 -> true
+      0 -> false
     end
   end
 end

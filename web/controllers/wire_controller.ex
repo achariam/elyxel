@@ -4,6 +4,7 @@ defmodule Elyxel.WireController do
   import Elyxel.Authorize
   import Elyxel.Pagination
   import Ecto.Query
+  import Elyxel.Rating
   alias Elyxel.Wire
   alias Elyxel.Plus
   alias Elyxel.Repo
@@ -93,12 +94,16 @@ defmodule Elyxel.WireController do
 	end
 
 	def plus(conn, %{"wire_id" => wire_id}, user) do
-		wire = Wire |> Repo.get!(wire_id)
+		wire = Wire |> Repo.get!(wire_id) |> Repo.preload([:user, :pluses, :comments])
+		pluses = if (length(wire.pluses) == 0), do: 1, else: length(wire.pluses) #Hacky way to not have negative ratings (fix)
+		recalculated_wire = Wire.changeset(wire, %{"rating" => calculate_rating(pluses, length(wire.comments), wire.inserted_at)})
+
 		user_assoc = build_assoc(user, :pluses, %Plus{})
 		changeset = build_assoc(wire, :pluses, user_assoc)
 
 		case Repo.insert(changeset) do
 			{:ok, _user} ->
+				Repo.update(recalculated_wire) #Updating this here is not that great. (fix)
 				conn
 				|> redirect(to: NavigationHistory.last_path(conn, default: "/"))
 			{:error, changeset} ->

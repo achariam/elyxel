@@ -14,7 +14,7 @@ defmodule Elyxel.Wire do
   end
 
   @required_fields ~w(title link context user_id)
-  @optional_fields ~w()
+  @optional_fields ~w(rating)
 
   @doc """
   Creates a changeset based on the `model` and `params`.

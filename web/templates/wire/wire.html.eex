@@ -10,29 +10,15 @@
 
 	<div class="action-bar">
 		<div class="controls">
-			<%= if lightning_state(@wire.user.id, @wire.id) do %>
-				<form action="<%= wire_wire_path(@conn, :plus, @wire.id) %>" method="post">
-					<input type="hidden" name="_csrf_token" value="<%= get_csrf_token %>">
-					<label class="plus">
-						<input type="submit" value="plus">
-						<svg class="lightning" width="12" height="18" viewBox="3 0 12 18" xmlns="http://www.w3.org/2000/svg">
-						  <path d="M4.63 9.3c-.55 0-.7-.34-.35-.77l5.98-7.16c.36-.43.58-.34.5.2l-.9 5.7c-.08.53.3.97.85.97h2.68c.55 0 .7.34.35.77l-6.2 7.3c-.36.45-.57.35-.47-.2l1.07-5.8c.1-.54-.27-1-.82-1H4.64z" stroke-width="1.2" fill="none"/>
-						</svg>
-						<span class="small"><%= length(@wire.pluses) %></span>
-					</label>
-				</form>
-			<%= else %>
-				<form action="<%= wire_wire_path(@conn, :zero, @wire.id) %>" method="post">
-					<input name="_method" type="hidden" value="delete">
-					<input type="hidden" name="_csrf_token" value="<%= get_csrf_token %>">
-					<label class="plus">
-						<input type="submit" value="plus">
-						<svg class="lightning strike" width="12" height="18" viewBox="3 0 12 18" xmlns="http://www.w3.org/2000/svg">
-						  <path d="M4.63 9.3c-.55 0-.7-.34-.35-.77l5.98-7.16c.36-.43.58-.34.5.2l-.9 5.7c-.08.53.3.97.85.97h2.68c.55 0 .7.34.35.77l-6.2 7.3c-.36.45-.57.35-.47-.2l1.07-5.8c.1-.54-.27-1-.82-1H4.64z" stroke-width="1.2"/>
-						</svg>
-						<span class="small"><%= length(@wire.pluses) %></span>
-					</label>
-				</form>
+			<%= cond do %>
+				<%= (lightning_state(@current_user.id, @wire.id) == true) && (@wire.user.id != @current_user.id) -> %>
+					<%= render "zero.html", wire: @wire, action: wire_wire_path(@conn, :zero, @wire.id), conn: @conn %>
+				<%= (lightning_state(@current_user.id, @wire.id) == false) && (@wire.user.id == @current_user.id) -> %>
+					<%= render "plus.html", wire: @wire, action: wire_wire_path(@conn, :plus, @wire.id), conn: @conn %>
+				<%= (lightning_state(@current_user.id, @wire.id) == true) && (@wire.user.id == @current_user.id) -> %>
+					<%= render "zero.html", wire: @wire, action: wire_wire_path(@conn, :zero, @wire.id), conn: @conn %>
+				<%= true -> %>
+					<%= render "plus.html", wire: @wire, action: wire_wire_path(@conn, :plus, @wire.id), conn: @conn %>
 			<%= end %>
 
 			<a href="<%= wire_path(@conn, :show, @wire.id) %>" class="comment">

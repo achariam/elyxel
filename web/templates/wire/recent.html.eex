@@ -1,5 +1,5 @@
   <%= for wire <- @wires.list do %>
-  	<%= render "wire.html", wire: wire, conn: @conn %>
+  	<%= render "wire.html", wire: wire, conn: @conn, current_user: @current_user %>
   <% end %>
   <%= if @wires[:has_next?] do %>
       <a class="next" href="<%= wire_path(@conn, :recent, p: next_page @wires.current_page) %>">

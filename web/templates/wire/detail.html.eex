@@ -1,4 +1,4 @@
-<%= render "wire.html", wire: @wire, conn: @conn %>
+<%= render "wire.html", wire: @wire, conn: @conn, current_user: @current_user %>
 
 <%= render "comment.html", wire: @wire, changeset: @changeset, action: wire_wire_path(@conn, :comment, @wire.id), conn: @conn %>
 
