@@ -1,0 +1,18 @@
+/*
+ * Comment
+ * =======
+ *
+ */
+
+.comments {
+  list-style-type: none;
+}
+
+.comments li {
+  border-left: 1px solid var(--smoke-color);
+  padding: 0 calc(var(--baseline) / 2);
+}
+
+.comments li {
+  margin: calc(var(--baseline) / 2) 0 0 0;
+}

@@ -14,10 +14,10 @@
       <% end %>
     </ul>
 
-    <%= text_input f, :content, placeholder: "Comment" %>
+    <%= textarea f, :content, placeholder: " Enter Comment" %>
 
-    <div class="form-controls">
-      <%= submit "Submit" %>
+    <div class="form-controls small">
+      <%= submit "Comment" %>
     </div>
   <% end %>
 </div>

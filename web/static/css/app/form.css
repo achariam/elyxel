@@ -1,0 +1,64 @@
+/*
+ * Form
+ * ====
+ *
+ */
+
+.form-controls {
+  text-align: right;
+  margin-top: 0;
+}
+
+textarea {
+  width: 100%;
+  margin-top: calc(var(--baseline) / 2);
+  margin-bottom: calc(var(--baseline) / 6);
+  outline: none;
+  border: 1px solid var(--smoke-color);
+  padding: calc(var(--baseline) / 4);
+}
+
+::-webkit-resizer {
+  display: none;
+}
+
+input {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type=text] {
+  width: 100%;
+  margin: calc(var(--baseline) / 2) 0;
+  border: 1px solid var(--smoke-color);
+  padding: calc(var(--baseline) / 4);
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 1px solid var(--text-color);
+}
+
+::-webkit-input-placeholder {
+  color: var(--slate-color);
+}
+
+input[type=submit] {
+  padding: 0.3em 1em;
+  border: 1px solid var(--smoke-color);
+  background: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  opacity: .5;
+}
+
+.notifications {
+  margin-top: calc(var(--baseline) / 2);
+  text-align: center;
+  width: 100%;
+  background: var(--midnight-color);
+  color: var(--white-color);
+  vertical-align: middle;
+}

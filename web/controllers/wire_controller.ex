@@ -74,8 +74,9 @@ defmodule Elyxel.WireController do
 
 	def show(conn, %{"id" => id}, _user) do
 	  wire = Wire |> Repo.get!(id) |> Repo.preload([:user, :pluses, :comments])
+	  comments = Comment |> where([c], c.wire_id == ^id) |> Repo.all |> Repo.preload([:user])
 	  changeset = Comment.changeset(%Comment{})
-	  render(conn, "detail.html", wire: wire, changeset: changeset)
+	  render(conn, "detail.html", wire: wire, changeset: changeset, comments: comments)
 	end
 
 	def comment(conn, %{"comment" => %{"content" => content}, "wire_id" => wire_id}, user) do

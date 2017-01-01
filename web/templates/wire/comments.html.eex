@@ -1,16 +1,12 @@
-<h3> Comments: </h3>
-<table class="table">
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for comment <- @wire.comments do %>
-    <tr>
-      <td><%= markdown(comment.content) %></td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
+<ul class="comments">
+  <%= for comment <- @comments do %>
+    <li>
+      <p> <%= markdown(comment.content) %> </p>
+      <p class="small">
+        <a href ="<%= user_path(@conn, :show, comment.user_id) %>"><%= comment.user.username %></a>
+        &middot;
+        <%= simple_time comment.inserted_at %>
+      </p>
+    </li>
+  <% end %>
+</ul>

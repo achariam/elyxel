@@ -32,8 +32,11 @@ exports.config = {
           "web/static/css/app/base.reset.css",
           "web/static/css/app/base.base.css",
           "web/static/css/app/base.layout.css",
+          "web/static/css/app/utilities.css",
+          "web/static/css/app/form.css",
           "web/static/css/app/nav.css",
-          "web/static/css/app/wire.css"
+          "web/static/css/app/wire.css",
+          "web/static/css/app/comment.css"
         ],
         after: []
       }

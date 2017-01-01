@@ -15,8 +15,8 @@
       </ul>
 
       <%= text_input f, :title, placeholder: "Title" %>
-      <%= text_input f, :link, placeholder: "URL" %>
-      <%= text_input f, :context, placeholder: "Description" %>
+      <%= text_input f, :link, placeholder: "Link" %>
+      <%= textarea f, :context, placeholder: "Description" %>
 
       <div class="form-controls">
         <%= submit "Submit" %>
