@@ -95,7 +95,11 @@ a {
   color: var(--text-color);
 }
 
-.login-button {
+a:hover{
+  opacity: .6;
+}
+
+.sign-in-button {
   border: 1px solid var(--smoke-color);
   padding: 0.3rem 1rem;
 }
@@ -176,17 +180,15 @@ input:focus {
 
 input[type=submit] {
   font-size: .75em;
-  font-weight: 500;
-  background: var(--midnight-color);
-  color: var(--white-color);
-  padding: 0.3rem 3rem;
-  border: none;
+  border: 1px solid var(--smoke-color);
+  padding: 0 1rem;
+  background: none;
   cursor: pointer;
-  margin: 0 var(--baseline);
+  margin: 0.1rem var(--baseline);
 }
 
 input[type=submit]:hover {
-  opacity: .8;
+  opacity: .6;
 }
 
 .notifications {

@@ -36,6 +36,7 @@ a {
 
 a:hover, a:focus {
   color: var(--site-color);
+  opacity: .6;
 }
 
 .small {

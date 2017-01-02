@@ -36,7 +36,8 @@ input {
   border-radius: 0;
 }
 
-input[type=text] {
+input[type=text],
+input[type=password] {
   width: 100%;
   margin-top: calc(var(--baseline) / 2);
   border: 1px solid var(--smoke-color);
@@ -60,7 +61,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  opacity: .5;
+  opacity: .6;
 }
 
 .notifications {

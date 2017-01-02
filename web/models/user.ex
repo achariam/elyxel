@@ -16,9 +16,9 @@ defmodule Elyxel.User do
     field :reset_token, :string
     field :reset_sent_at, Ecto.DateTime
 
-    has_many :wires, Elyxel.Wire
-    has_many :pluses, Elyxel.Plus
-    has_many :comments, Elyxel.Comment
+    has_many :wires, Elyxel.Wire, on_delete: :delete_all
+    has_many :pluses, Elyxel.Plus, on_delete: :delete_all
+    has_many :comments, Elyxel.Comment, on_delete: :delete_all
     timestamps
   end
 
