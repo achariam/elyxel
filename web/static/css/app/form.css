@@ -18,6 +18,11 @@ textarea {
   padding: calc(var(--baseline) / 4);
 }
 
+textarea:focus {
+  outline: none;
+  border-bottom: 1px solid var(--text-color);
+}
+
 ::-webkit-resizer {
   display: none;
 }
