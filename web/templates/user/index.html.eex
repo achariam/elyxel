@@ -1,1 +1,0 @@
-<h2>Gosh, <%= @current_user.username %>, it's so awfully nice to see you again!</h2>

@@ -47,7 +47,7 @@ defmodule Elyxel.Router do
   scope "/users", Elyxel do
     pipe_through :browser
 
-    resources "/", UserController, only: [:index, :show, :edit, :update]
+    resources "/", UserController, only: [:show]
   end
 
   scope "/admin", Elyxel do

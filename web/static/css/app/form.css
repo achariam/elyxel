@@ -29,7 +29,7 @@ input {
 
 input[type=text] {
   width: 100%;
-  margin: calc(var(--baseline) / 2) 0;
+  margin-top: calc(var(--baseline) / 2);
   border: 1px solid var(--smoke-color);
   padding: calc(var(--baseline) / 4);
 }
