@@ -4,8 +4,6 @@
  */
 
 :root {
-  --baseline: 1.7778rem;
-
   --text-color: #434648;
   --slate-color: #949494;
   --smoke-color: #D8DEE3;
@@ -13,6 +11,7 @@
   --white-color: #FFFFFF;
   --salmon-color: #EA4C50;
 
+  --baseline: 1.5rem;
   --system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI",
                   Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
                   "Helvetica Neue", sans-serif;
@@ -43,6 +42,7 @@ html {
   font-size: 100%;
   line-height: var(--baseline);
 	font-family: var(--system-fonts);
+  -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   background: none;
 }
@@ -75,12 +75,12 @@ html {
 
 .nav {
   align-self: flex-start;
-  margin: 2em;
+  margin: var(--baseline);
  }
 
  .word-mark {
   align-self: flex-end;
-  margin: 2em;
+  margin: var(--baseline);
  }
 
 .elyxel {
@@ -97,8 +97,7 @@ a {
 
 .login-button {
   border: 1px solid var(--smoke-color);
-  padding: 0.3em 1em;
-  border-radius: 1em;
+  padding: 0.3rem 1rem;
 }
 
 svg {
@@ -145,7 +144,7 @@ input[type=text],
 input[type=password] {
   display: block;
   width: 100vw;
-  margin: 2em 0;
+  margin: var(--baseline) 0;
   border: 1px solid var(--smoke-color);
   border-width: 0 0 1px 0;
   text-align: center;
@@ -153,7 +152,7 @@ input[type=password] {
 
 .form-controls {
   text-align: right;
-  margin: 0 2rem;
+  margin: 0 var(--baseline);
 }
 
 .forgot-pass {
@@ -173,24 +172,21 @@ input:focus {
 ::-webkit-input-placeholder {
   color: var(--slate-color);
   font-weight: 100;
-  letter-spacing: 0.075em;
 }
 
 input[type=submit] {
   font-size: .75em;
   font-weight: 500;
-  letter-spacing: 0.1em;
   background: var(--midnight-color);
   color: var(--white-color);
-  padding: 0.3em 3em;
-  border-radius: 2em;
+  padding: 0.3rem 3rem;
   border: none;
   cursor: pointer;
-  margin: 0 2rem;
+  margin: 0 var(--baseline);
 }
 
 input[type=submit]:hover {
-  opacity: .9;
+  opacity: .8;
 }
 
 .notifications {

@@ -9,8 +9,9 @@ html {
   line-height: var(--baseline);
   font-family: var(--system-fonts);
   color: var(--text-color);
-  background-color: #fff;
+  background-color: var(--white-color);
   -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media (max-width: 40rem) {
