@@ -16,6 +16,9 @@ textarea {
   outline: none;
   border: 1px solid var(--smoke-color);
   padding: calc(var(--baseline) / 4);
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
 }
 
 textarea:focus {
@@ -30,6 +33,7 @@ textarea:focus {
 input {
   -webkit-appearance: none;
   appearance: none;
+  border-radius: 0;
 }
 
 input[type=text] {
