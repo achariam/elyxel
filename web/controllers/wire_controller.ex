@@ -107,7 +107,7 @@ defmodule Elyxel.WireController do
 				Repo.update(recalculated_wire) #Updating this here is not that great. (fix)
 				conn
 				|> redirect(to: NavigationHistory.last_path(conn, default: "/"))
-			{:error, changeset} ->
+			{:error} ->
 				conn
 				|> redirect(to: NavigationHistory.last_path(conn, default: "/"))
 		end
