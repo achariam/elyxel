@@ -133,12 +133,10 @@
           width: auto; }
         .btn table td {
           background-color: #ffffff;
-          border-radius: 20px;
           text-align: center; }
         .btn a {
           background-color: #FFFFFF;
           border: solid 1px #0D2434;
-          border-radius: 20px;
           box-sizing: border-box;
           color: #0D2434;
           cursor: pointer;
@@ -276,7 +274,7 @@
                                     <tr>
                                       <td style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;,
                   Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;,
-                  &quot;Helvetica Neue&quot;, sans-serif;font-size: 16px !important;vertical-align: top;background-color: #0D2434;border-radius: 20px;text-align: center;"> <a href="<%= raw @confirm_url %>" target="_blank" style="color: #FFFFFF;text-decoration: none;background-color: #FFFFFF;border: none;border-radius: 20px;box-sizing: border-box;cursor: pointer;display: inline-block;font-size: 16px !important;font-weight: 500;margin: 0 20px;padding: 10px 20px;text-transform: uppercase;border-color: #0D2434;letter-spacing: 1px;background: #0D2434;width: 95% !important;">Confirm Email</a> </td>
+                  &quot;Helvetica Neue&quot;, sans-serif;font-size: 16px !important;vertical-align: top;background-color: #0D2434;text-align: center;"> <a href="<%= raw @confirm_url %>" target="_blank" style="color: #FFFFFF;text-decoration: none;background-color: #FFFFFF;border: none;box-sizing: border-box;cursor: pointer;display: inline-block;font-size: 16px !important;font-weight: 500;margin: 0 20px;padding: 10px 20px;text-transform: uppercase;border-color: #0D2434;letter-spacing: 1px;background: #0D2434;width: 95% !important;">Confirm Email</a> </td>
                                     </tr>
                                   </tbody>
                                 </table>
