@@ -14,11 +14,11 @@
         <% end %>
       </ul>
 
-      <%= text_input f, :username, placeholder: "Username" %>
       <%= text_input f, :first_name, placeholder: "First Name" %>
       <%= text_input f, :last_name, placeholder: "Last Name" %>
+      <%= text_input f, :username, placeholder: "Username" %>
       <%= text_input f, :email, placeholder: "Email" %>
-      <%= password_input f, :password, placeholder: "Password" %>
+      <%= password_input f, :password, placeholder: "P@ssw0rd" %>
       <%= text_input f, :code, placeholder: "Invite Code" %>
 
       <div class="form-controls">
