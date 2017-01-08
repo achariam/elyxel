@@ -53,10 +53,6 @@ html {
 }
 
 @media (max-width: 30em) {
-  html {
-    font-size: 62.5%
-  }
-
   .word-mark {
     padding-bottom: 7em;
   }
@@ -225,9 +221,9 @@ input[type=submit]:hover {
 }
 
 .atom {
-  height: 3rem;
-  width: 3rem;
-  margin: calc(var(--baseline) * 4) 0 calc(var(--baseline) * 2) 0;
+  height: 6rem;
+  width: 100%;
+  margin: calc(var(--baseline) * 4) 0 0;
   stroke-width: 1;
 }
 

@@ -1,6 +1,6 @@
 <div class="about">
   <div class="about-content">
-    <svg class="atom" xmlns="http://www.w3.org/2000/svg" width="40" height="41" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <svg class="atom" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <defs>
         <path id="a" d="M33.5744 14.0478c3.5422 0 6.4137 2.9083 6.4137 6.4976 0 3.5885-2.8675 6.4976-6.4134 6.4976H6.4136C2.8717 27.043 0 24.1347 0 20.5454c0-3.5885 2.8678-6.4976 6.4137-6.4976h27.1607"/>
         <mask id="i" width="39.9881" height="12.9952" x="0" y="0" fill="#fff">
