@@ -26,7 +26,7 @@ h3, .h3 {
 
 * + h2, * + .h2,
 * + h3, * + .h3 {
-  padding-top: var(--baseline);
+  padding-top: calc(var(--baseline) / 2);
 }
 
 a {

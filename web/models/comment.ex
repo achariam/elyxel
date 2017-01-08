@@ -16,7 +16,7 @@ defmodule Elyxel.Comment do
     struct
     |> cast(params, [:content, :user_id, :wire_id])
     |> validate_required([:content, :user_id, :wire_id])
-    |> validate_length(:content, min: 1, max: 1000)
+    |> validate_length(:content, min: 1, max: 5000)
     |> strip_unsafe_content(params)
     |> foreign_key_constraint(:user_id)
     |> foreign_key_constraint(:wire_id)
