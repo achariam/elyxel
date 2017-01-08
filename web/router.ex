@@ -15,6 +15,7 @@ defmodule Elyxel.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/about", PageController, :about
     get "/confirm", PageController, :confirm
     get "/askreset", PageController, :askreset
     post "/askreset", PageController, :askreset_password

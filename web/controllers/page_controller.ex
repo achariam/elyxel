@@ -60,4 +60,8 @@ defmodule Elyxel.PageController do
   def reset_password(conn, params) do
     handle_reset conn, params
   end
+
+  def about(conn, _params) do
+    render conn, "about.html"
+  end
 end

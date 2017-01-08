@@ -1,0 +1,61 @@
+<div class="about">
+  <div class="about-content">
+    <svg class="atom" xmlns="http://www.w3.org/2000/svg" width="40" height="41" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+        <path id="a" d="M33.5744 14.0478c3.5422 0 6.4137 2.9083 6.4137 6.4976 0 3.5885-2.8675 6.4976-6.4134 6.4976H6.4136C2.8717 27.043 0 24.1347 0 20.5454c0-3.5885 2.8678-6.4976 6.4137-6.4976h27.1607"/>
+        <mask id="i" width="39.9881" height="12.9952" x="0" y="0" fill="#fff">
+          <use xlink:href="#a"/>
+        </mask>
+        <path id="b" d="M30.0542 9.3454c3.2725-1.3555 7.0384.2325 8.412 3.5486 1.3732 3.3154-.163 7.1005-3.439 8.4574L9.934 31.7454c-3.2726 1.3555-7.0385-.2325-8.412-3.5486-1.3733-3.3154.163-7.1005 3.439-8.4574l25.093-10.394z"/>
+        <mask id="j" width="37.9496" height="23.3684" x="0" y="0" fill="#fff">
+          <use xlink:href="#b"/>
+        </mask>
+        <path id="c" d="M35.0272 19.7394c3.2726 1.3555 4.8125 5.1413 3.439 8.4574-1.3733 3.3154-5.136 4.9056-8.412 3.5486L4.961 21.3514C1.6883 19.996.1483 16.21 1.522 12.894c1.3732-3.3154 5.136-4.9055 8.412-3.5486l25.0932 10.394z"/>
+        <mask id="k" width="37.949" height="23.3694" x="0" y="0" fill="#fff">
+          <use xlink:href="#c"/>
+        </mask>
+        <path id="d" d="M25.0023 6.348c2.5047-2.5046 6.5917-2.4786 9.1297.0595 2.5375 2.5374 2.5667 6.6223.0594 9.1296L14.9858 34.743c-2.5047 2.5047-6.5916 2.4787-9.1297-.0594-2.5372-2.5374-2.5663-6.6223-.059-9.1296L25.0023 6.348z"/>
+        <mask id="l" width="32.1191" height="32.1176" x="0" y="0" fill="#fff">
+          <use xlink:href="#d"/>
+        </mask>
+        <path id="e" d="M34.1914 25.5537c2.5047 2.5047 2.4786 6.5916-.0594 9.1296-2.5375 2.5375-6.6224 2.5667-9.1297.0594L5.7968 15.537C3.292 13.0325 3.318 8.9456 5.856 6.4076c2.5377-2.5376 6.6226-2.5668 9.13-.0596l19.2056 19.2057z"/>
+        <mask id="m" width="32.1176" height="32.1191" x="0" y="0" fill="#fff">
+          <use xlink:href="#e"/>
+        </mask>
+        <path id="f" d="M26.4917 34.1258c0 3.5422-2.9083 6.4137-6.4976 6.4137-3.5883 0-6.4974-2.8678-6.4974-6.4137V6.965c0-3.542 2.9083-6.4137 6.4977-6.4137 3.5886 0 6.4977 2.868 6.4977 6.4137v27.1608z"/>
+        <mask id="n" width="12.9952" height="39.9881" x="0" y="0" fill="#fff">
+          <use xlink:href="#f"/>
+        </mask>
+        <path id="g" d="M20.8 35.5786c-1.3554 3.2725-5.1412 4.8125-8.4573 3.439-3.3154-1.3734-4.9056-5.136-3.5486-8.412L19.188 5.512c1.3556-3.2725 5.1414-4.8125 8.4575-3.439 3.3153 1.3734 4.9055 5.1362 3.5486 8.412L20.8 35.5787z"/>
+        <mask id="o" width="23.3694" height="37.949" x="0" y="0" fill="#fff">
+          <use xlink:href="#g"/>
+        </mask>
+        <path id="h" d="M31.194 30.6055c1.3556 3.2726-.2324 7.0384-3.5485 8.412-3.3154 1.3733-7.1005-.163-8.4575-3.439L8.794 10.4855c-1.3555-3.2726.2326-7.0385 3.5487-8.412C15.658.7 19.4432 2.2362 20.8 5.5122l10.394 25.0932z"/>
+        <mask id="p" width="23.3684" height="37.9496" x="0" y="0" fill="#fff">
+          <use xlink:href="#h"/>
+        </mask>
+      </defs>
+      <use class="shift-1"fill="none" stroke="#000" mask="url(#i)" xlink:href="#a"/>
+      <use class="shift-2"fill="none" stroke="#000" mask="url(#j)" xlink:href="#b"/>
+      <use class="shift-3"fill="none" stroke="#000" mask="url(#k)" xlink:href="#c"/>
+      <use class="shift-4"fill="none" stroke="#000" mask="url(#l)" xlink:href="#d"/>
+      <use class="shift-5"fill="none" stroke="#000" mask="url(#m)" xlink:href="#e"/>
+      <use class="shift-6"fill="none" stroke="#000" mask="url(#n)" xlink:href="#f"/>
+      <use class="shift-7"fill="none" stroke="#000" mask="url(#o)" xlink:href="#g"/>
+      <use class="shift-8"fill="none" stroke="#000" mask="url(#p)" xlink:href="#h"/>
+    </svg>
+    <p>
+      Elyxel is a space to gather and share stories. If you like new
+      technology and appreciate the craft of building this is your new home.
+    </p>
+    <p>
+      We currently have a minimal feature set built out with some exciting
+      features on the horizon. You will guide our next steps.
+    </p>
+    <p>
+      For now, what we lack in features we make up for in heart. Our goal
+      is to be an inclusive community of gracious, kind and thoughtful humans.
+      You should <a href="mailto:hello@mail.elyxel.com">join us</a>.
+    </p>
+  </div>
+</div>

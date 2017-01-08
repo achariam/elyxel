@@ -9,19 +9,6 @@
 	margin: 0 auto;
 }
 
-.grid {
-	display: flex;
-	flex-flow: row wrap;
-	width: 100%;
-	margin: 0 auto;
-}
-
-.grid > * {
-	flex-basis: 10em;
-	flex-grow: 1;
- 	align-items: center;
-}
-
 article {
 	padding: calc( var(--baseline) / 2) 0;
 	border-bottom: 1px solid var(--smoke-color);

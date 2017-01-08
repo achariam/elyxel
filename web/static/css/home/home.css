@@ -2,7 +2,6 @@
  * Variables
  * =========
  */
-
 :root {
   --text-color: #434648;
   --slate-color: #949494;
@@ -90,7 +89,7 @@ html {
 }
 
 a {
-  font-size: .75em;
+  font-size: .75rem;
   text-decoration: none;
   color: var(--text-color);
 }
@@ -99,12 +98,13 @@ a:hover{
   opacity: .6;
 }
 
-.sign-in-button {
+.nav-button {
   border: 1px solid var(--smoke-color);
   padding: 0.3rem 1rem;
+  margin-left: calc( var(--baseline) / 4 );
 }
 
-svg {
+.background-svg {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -185,6 +185,7 @@ input[type=submit] {
   background: none;
   cursor: pointer;
   margin: 0.1rem var(--baseline);
+  border-radius: 0;
 }
 
 input[type=submit]:hover {
@@ -197,4 +198,76 @@ input[type=submit]:hover {
   background: var(--salmon-color);
   color: var(--white-color);
   vertical-align: middle;
+}
+/*
+ * About
+ * =====
+ */
+.about {
+  max-width: 24rem;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.about-content {
+  margin: var(--baseline);
+  min-height: 24rem;
+}
+
+.about-content > * {
+  font-size: .9rem;
+  margin: 0 0 calc(var(--baseline) / 2);
+}
+
+.about a{
+  color: var(--slate-color);
+  font-size: .9rem;
+}
+
+.atom {
+  height: 3rem;
+  width: 3rem;
+  margin: calc(var(--baseline) * 4) 0 calc(var(--baseline) * 2) 0;
+  stroke-width: 1;
+}
+
+.shift-1 {
+  animation: pulse 1s linear alternate forwards;
+}
+
+.shift-2 {
+  animation: pulse 1s linear 2s alternate forwards;
+}
+
+.shift-3 {
+  animation: pulse 1s linear 4s alternate forwards;
+}
+
+.shift-4 {
+  animation: pulse 1s linear 6s alternate forwards;
+}
+
+.shift-5 {
+  animation: pulse 1s linear 8s alternate forwards;
+}
+
+.shift-6 {
+  animation: pulse 1s linear 10s alternate forwards;
+}
+
+.shift-7 {
+  animation: pulse 1s linear 12s alternate forwards;
+}
+
+.shift-8 {
+  animation: pulse 1s linear 14s alternate forwards;
+}
+
+@keyframes pulse {
+  from {
+    stroke: #000;
+  }
+  to {
+    stroke: var(--salmon-color);
+  }
 }
