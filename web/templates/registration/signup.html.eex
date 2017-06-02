@@ -18,7 +18,7 @@
       <%= text_input f, :last_name, placeholder: "Last Name" %>
       <%= text_input f, :username, placeholder: "Username" %>
       <%= text_input f, :email, placeholder: "Email" %>
-      <%= password_input f, :password, placeholder: "P@ssw0rd" %>
+      <%= password_input f, :password, placeholder: "P@ssw0rd <- (min:8 digit:1 punctuation:1)" %>
       <%= text_input f, :code, placeholder: "Invite Code" %>
 
       <div class="form-controls">
