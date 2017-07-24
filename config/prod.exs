@@ -14,7 +14,7 @@ use Mix.Config
 config :elyxel, Elyxel.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 8888],
   url: [host: "elyxel.com", port: 80],
-  cache_static_manifest: "priv/static/manifest.json",
+  cache_static_manifest: "priv/static/cache_manifest.json",
   server: true
 
 # Do not print debug messages in production
