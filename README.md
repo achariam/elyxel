@@ -8,6 +8,11 @@ This code base serves as an example of a fully functional Elixir and Phoenix app
 
 # Local Setup
 
+- Install [Docker](https://docs.docker.com/engine/installation/#supported-platforms)
+- `docker-compose build web`
+- `docker-compose up`
+- Visit [http://elyxel.localhost:8000](http://elyxel.localhost:8000)
+
 - Setup local environment as described in [Phoenix documentation](https://hexdocs.pm/phoenix/installation.html#content).
 - Seed database with `seeds.exs` & `wire_seeds.exs`
 - `mix phoenix.server`

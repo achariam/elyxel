@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=elyxel_dev
+  web:
+    build: .
+    command: mix phoenix.server
+    volumes:
+      - ./config:/usr/src/app/config
+      - ./lib:/usr/src/app/lib
+      - ./priv:/usr/src/app/priv
+      - ./test:/usr/src/app/test
+      - ./web:/usr/src/app/web
+    environment:
+      - DB_USER=postgres
+      - DB_PASSWORD=""
+      - DB_NAME=elyxel_dev
+      - DB_HOST=db
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
+    labels:
+      - 'traefik.backend=web'
+      - 'traefik.port=4000'
+      - 'traefik.frontend.rule=Host:elyxel.localhost'
+  mailhog:
+    image: mailhog/mailhog
+    labels:
+      - 'traefik.backend=mailhog'
+      - 'traefik.port=8025'
+      - 'traefik.frontend.rule=Host:mailhog.localhost'
+  traefik:
+    image: traefik
+    command: -c /dev/null --web --docker --logLevel=INFO
+    ports:
+      - '8000:80'
+      - '8080:8080' # Dashboard
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock

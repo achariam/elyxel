@@ -24,3 +24,5 @@ erl_crash.dump
 # variables.
 /config/prod.secret.exs
 /config/dev.secret.exs
+
+.DS_Store
