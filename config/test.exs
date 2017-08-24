@@ -12,8 +12,8 @@ config :logger, level: :warn
 # Configure your database
 config :elyxel, Elyxel.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "elyxel_test",
-  hostname: "localhost",
+  username: System.get_env("DB_USER"),
+  password: System.get_env("DB_PASSWORD"),
+  database: System.get_env("DB_TEST"),
+  hostname: System.get_env("DB_HOST"),
   pool: Ecto.Adapters.SQL.Sandbox

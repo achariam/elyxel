@@ -1,0 +1,1 @@
+CREATE DATABASE elyxel_test;

@@ -13,10 +13,14 @@ This code base serves as an example of a fully functional Elixir and Phoenix app
 - `docker-compose up`
 - Visit [http://elyxel.localhost:8000](http://elyxel.localhost:8000)
 
-- Setup local environment as described in [Phoenix documentation](https://hexdocs.pm/phoenix/installation.html#content).
-- Seed database with `seeds.exs` & `wire_seeds.exs`
-- `mix phoenix.server`
-- Visit `localhost:4000` in browser.
+# Migrate and seed the database
+- Exec into running docker container `docker exec -it elyxel_web_1 /bin/bash`
+- `mix ecto.setup`
+
+# Running Tests
+- Exec into running docker container `docker exec -it elyxel_web_1 /bin/bash`
+- `mix test`
+- OR `docker-compose run --rm web mix test`
 
 # Production
 

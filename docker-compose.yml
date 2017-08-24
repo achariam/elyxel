@@ -3,8 +3,8 @@ version: '3'
 services:
   db:
     image: postgres
-    environment:
-      - POSTGRES_DB=elyxel_dev
+    volumes:
+      - ./priv/repo/db:/docker-entrypoint-initdb.d
   web:
     build: .
     command: mix phoenix.server
@@ -18,6 +18,7 @@ services:
       - DB_USER=postgres
       - DB_PASSWORD=""
       - DB_NAME=elyxel_dev
+      - DB_TEST=elyxel_test
       - DB_HOST=db
     ports:
       - "4000:4000"
